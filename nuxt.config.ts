@@ -29,7 +29,7 @@ export default defineNuxtConfig({
   },
   i18n: {
     lazy: true,
-    Types: 'composition',
+    type: 'composition',
     langDir: 'locales',
     strategy: 'no_prefix',
     locales: [

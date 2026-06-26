@@ -3,44 +3,29 @@ import type { ClientInterface } from '~/components/Clients/Types/client.interfac
 export const clientsData: ClientInterface[] = [
   {
     id: 1,
-    contact: 'jean',
+    contact_name: 'Jean Dupont',
+    private_name: 'Dupont',
     email: 'societeA@societeA.fr',
     phone: '0601020304',
-    company: {
-      name: 'Société A'
-    },
-    address: {
-      street: 'rue du test',
-      city: 'lyon',
-      zipcode: 69001
-    }
+    company: 'Société A',
+    clientType: 'pro'
   },
   {
     id: 2,
-    contact: 'pierre',
+    contact_name: 'Pierre Martin',
+    private_name: 'Martin',
     email: 'societeB@societeB.fr',
-    phone: '0601020304',
-    company: {
-      name: 'Société B'
-    },
-    address: {
-      street: 'rue du test',
-      city: 'lyon',
-      zipcode: 69002
-    }
+    phone: '0601020305',
+    company: 'Société B',
+    clientType: 'pro'
   },
   {
     id: 3,
-    contact: 'jacque',
+    contact_name: 'Jacques Bernard',
+    private_name: null,
     email: 'societeC@societeC.fr',
-    phone: '0601020304',
-    company: {
-      name: 'Société C'
-    },
-    address: {
-      street: 'rue du test',
-      city: 'lyon',
-      zipcode: 69003
-    }
+    phone: '0601020306',
+    company: null,
+    clientType: 'private'
   }
 ];

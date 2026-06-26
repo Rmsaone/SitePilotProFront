@@ -2,7 +2,7 @@
   "worksite": {
     "add": "Add a worksite",
     "list": {
-      "titleList": "Worksites list",
+      "title": "Worksites list",
       "search": "Search worksite",
       "statusSearch": "Worksite status",
       "searchPlaceholder": "By name, client, location ...",

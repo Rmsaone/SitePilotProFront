@@ -11,9 +11,8 @@ export const worksiteColumns: TableColumn<WorksiteInterface>[] = [
         td: 'text-center font-medium w-[5%]'
       }
     }
-
   }, {
-    accessorKey: 'worksiteName',
+    accessorKey: 'name_worksite',
     header: 'Nom du chantier',
     meta: {
       class: {
@@ -22,6 +21,7 @@ export const worksiteColumns: TableColumn<WorksiteInterface>[] = [
       }
     }
   }, {
+    id: 'client',
     accessorKey: 'client',
     header: 'Client',
     meta: {
@@ -31,25 +31,25 @@ export const worksiteColumns: TableColumn<WorksiteInterface>[] = [
       }
     }
   }, {
-    accessorKey: 'place',
-    header: 'Lieu',
+    accessorKey: 'zip_code',
+    header: 'Code postal',
     meta: {
       class: {
-        th: 'text-left w-[20%]',
-        td: 'text-left font-medium w-[20%]'
+        th: 'text-left w-[10%]',
+        td: 'text-left font-medium w-[10%]'
       }
     }
   }, {
-    id: 'startDate',
-    accessorKey: 'startDate',
+    id: 'start_date',
+    accessorKey: 'start_date',
     meta: { class: { th: 'text-center w-[10%]', td: 'text-center font-medium w-[10%]' } }
   }, {
-    id: 'endDate',
-    accessorKey: 'endDate',
+    id: 'end_date',
+    accessorKey: 'end_date',
     meta: { class: { th: 'text-center w-[10%]', td: 'text-center font-medium w-[10%]' } }
   }, {
-    accessorKey: 'status',
-    header: 'Status',
+    accessorKey: 'worksite_status',
+    header: 'Statut',
     meta: {
       class: {
         th: 'text-center w-[10%]',

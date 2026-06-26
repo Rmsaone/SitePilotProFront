@@ -104,8 +104,13 @@ const getStatusLabel = computed(() => {
         @click="row.toggleExpanded()"
       />
     </template>
-    <!-- Sortable header: startDate -->
-    <template #startDate-header="{ column }">
+
+    <template #client-cell="{ row }">
+      {{ row.original.client?.company ?? '-' }}
+    </template>
+
+    <!-- Sortable header: start_date -->
+    <template #start_date-header="{ column }">
       <UButton
         color="neutral"
         variant="ghost"
@@ -119,12 +124,12 @@ const getStatusLabel = computed(() => {
       />
     </template>
 
-    <template #startDate-cell="{ row }">
-      {{ formatDate(row.original.startDate) }}
+    <template #start_date-cell="{ row }">
+      {{ formatDate(row.original.start_date) }}
     </template>
 
-    <!-- Sortable header: endDate -->
-    <template #endDate-header="{ column }">
+    <!-- Sortable header: end_date -->
+    <template #end_date-header="{ column }">
       <UButton
         color="neutral"
         variant="ghost"
@@ -138,15 +143,15 @@ const getStatusLabel = computed(() => {
       />
     </template>
 
-    <template #endDate-cell="{ row }">
-      {{ formatDate(row.original.endDate) }}
+    <template #end_date-cell="{ row }">
+      {{ formatDate(row.original.end_date) }}
     </template>
 
     <!-- Status badge -->
-    <template #status-cell="{ row }">
+    <template #worksite_status-cell="{ row }">
       <UBadge
-        :color="getStatusColor(row.original.status)"
-        :label="getStatusLabel(row.original.status)"
+        :color="getStatusColor(row.original.worksite_status)"
+        :label="getStatusLabel(row.original.worksite_status)"
       />
     </template>
 

@@ -16,26 +16,17 @@ export const clientColumns: TableColumn<ClientInterface>[] = [
     header: 'Société',
     meta: {
       class: {
-        th: 'text-left w-[15%]',
-        td: 'text-left font-medium w-[15%]'
+        th: 'text-left w-[20%]',
+        td: 'text-left font-medium w-[20%]'
       }
     }
   }, {
-    accessorKey: 'contact',
+    accessorKey: 'contact_name',
     header: 'Nom du Contact',
     meta: {
       class: {
-        th: 'text-left w-[10%]',
-        td: 'text-left font-medium w-[10%]'
-      }
-    }
-  }, {
-    accessorKey: 'address',
-    header: 'Adresse',
-    meta: {
-      class: {
-        th: 'text-left w-[25%]',
-        td: 'text-left font-medium w-[25%]'
+        th: 'text-left w-[15%]',
+        td: 'text-left font-medium w-[15%]'
       }
     }
   }, {
@@ -43,13 +34,22 @@ export const clientColumns: TableColumn<ClientInterface>[] = [
     header: 'Email',
     meta: {
       class: {
-        th: 'text-left w-[15%]',
-        td: 'text-left font-medium w-[15%]'
+        th: 'text-left w-[20%]',
+        td: 'text-left font-medium w-[20%]'
       }
     }
   }, {
     accessorKey: 'phone',
     header: 'Téléphone',
+    meta: {
+      class: {
+        th: 'text-left w-[15%]',
+        td: 'text-left font-medium w-[15%]'
+      }
+    }
+  }, {
+    accessorKey: 'clientType',
+    header: 'Type',
     meta: {
       class: {
         th: 'text-left w-[10%]',

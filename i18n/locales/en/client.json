@@ -2,7 +2,7 @@
   "client": {
     "add": "Add a client",
     "list": {
-      "titleList": "Clients list",
+      "title": "Clients list",
       "name": "Company name",
       "email": "Email",
       "contact": "Contact",

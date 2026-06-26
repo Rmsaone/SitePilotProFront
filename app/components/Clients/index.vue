@@ -84,19 +84,19 @@ const globalFilter = ref('');
       />
     </template>
     <template #company-cell="{ row }">
-      {{ row.original.company.name }}
+      {{ row.original.company ?? '-' }}
     </template>
-    <template #contact-cell="{ row }">
-      {{ row.original.contact }}
-    </template>
-    <template #address-cell="{ row }">
-      {{ row.original.address.street }}, {{ row.original.address.zipcode }} {{ row.original.address.city }}
+    <template #contact_name-cell="{ row }">
+      {{ row.original.contact_name ?? '-' }}
     </template>
     <template #email-cell="{ row }">
       {{ row.original.email }}
     </template>
     <template #phone-cell="{ row }">
-      {{ row.original.phone }}
+      {{ row.original.phone ?? '-' }}
+    </template>
+    <template #clientType-cell="{ row }">
+      {{ row.original.clientType === 'pro' ? 'Professionnel' : 'Particulier' }}
     </template>
 
     <template #actions-cell="{ row }">

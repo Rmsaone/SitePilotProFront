@@ -2,21 +2,43 @@
 import type { NavigationMenuItem } from '@nuxt/ui';
 import Logo from '~/assets/images/Logo.png';
 
-useRoute();
 const open = ref(false);
 
 const links = [[{
   label: 'Tableau de Bord',
-  icon: 'i-lucide-house',
+  icon: 'i-lucide-layout-dashboard',
   to: '/'
 }, {
   label: 'Chantier',
-  icon: 'i-lucide-inbox',
+  icon: 'i-lucide-hard-hat',
   to: '/worksite'
 }, {
   label: 'Clients',
   icon: 'i-lucide-users',
   to: '/client'
+}, {
+  label: 'Devis',
+  icon: 'i-lucide-file-text',
+  to: '/devis'
+}, {
+  label: 'Factures',
+  icon: 'i-lucide-receipt',
+  to: '/factures'
+}, {
+  label: 'Achats',
+  icon: 'i-lucide-shopping-cart',
+  badge: 'Bientôt',
+  class: 'opacity-50 pointer-events-none'
+}, {
+  label: 'Suivi du temps',
+  icon: 'i-lucide-clock',
+  badge: 'Bientôt',
+  class: 'opacity-50 pointer-events-none'
+}, {
+  label: 'Rapports',
+  icon: 'i-lucide-bar-chart-2',
+  badge: 'Bientôt',
+  class: 'opacity-50 pointer-events-none'
 }], [{
   label: 'Settings',
   to: '/settings',

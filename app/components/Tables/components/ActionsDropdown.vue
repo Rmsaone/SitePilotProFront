@@ -1,5 +1,4 @@
 <script setup lang="ts">
-import { UButton, UDropdownMenu } from '#components';
 import type { DropdownMenuItem } from '@nuxt/ui';
 
 const items: DropdownMenuItem[] = [
