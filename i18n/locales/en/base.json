@@ -1,17 +1,17 @@
 {
   "base": {
-    "welcome": "Hello Welcome"
-  },
-  "modal": {
-    "titleDelete": "Confirm deletion",
-    "confirmationMessageClient": "Do you really want to delete this client?",
-    "irreversibleMessage": "This action is irreversible."
-  },
-  "btn": {
-    "update": "Update",
-    "delete": "Delete",
-    "cancel": "Cancel"
-  },
+    "welcome": "Hello, Welcome",
+    "default": "Menu ...",
+    "modal": {
+      "titleDelete": "Confirm deletion",
+      "confirmationMessageClient": "Do you really want to delete this client?",
+      "irreversibleMessage": "This action is irreversible."
+    },
+    "btn": {
+      "update": "Update",
+      "delete": "Delete",
+      "cancel": "Cancel"
+    },
     "login": {
       "title": "Sign in",
       "connexion": "Login",
@@ -23,5 +23,5 @@
       "register": "Sign up",
       "ConfirmationPassword": "Confirm password"
     }
+  }
 }
-

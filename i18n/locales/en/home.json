@@ -1,8 +1,11 @@
 {
   "home": {
-    "title": "Gérez vos chantiers en quelques clics",
-    "subTitle": "Simplifiez la gestion de vos travaux : suivi clients, planning précis, statuts en temps réel. Tout votre activité centralisée pour des chantiers sereins et rentables.",
-    "btn": "Démarrer Gratuitement",
-    "btnRegister": "S'incrire"
+    "dashboard": {
+      "title": "Dashboard"
+    },
+    "title": "Manage your worksites in a few clicks",
+    "subTitle": "Simplify your project management: client tracking, precise scheduling, real-time statuses. All your activity centralized for smooth and profitable worksites.",
+    "btn": "Get started for free",
+    "btnRegister": "Sign up"
   }
 }

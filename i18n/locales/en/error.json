@@ -1,18 +1,18 @@
 {
   "error": {
     "login": {
-      "error": "Identifiants incorrects",
-      "minMail": "L'email est requis",
-      "mail": "L'email doit être valide",
-      "password": "Le mot de passe est requis",
-      "minPassword": "Le mot de passe est trop court"
+      "error": "Invalid credentials",
+      "minMail": "Email is required",
+      "mail": "Email must be valid",
+      "password": "Password is required",
+      "minPassword": "Password is too short"
     },
     "register": {
-      "name": "le champ est obligatoire",
-      "minName": "Votre Pseudo doit être supérieur a 3 caratères",
-      "maxName": "Votre Pseudo ne peut pas dépasser 25 caractères",
-      "password": "La confirmation est requise",
-      "confPassword": "Les mots de passe ne correspondent pas"
+      "name": "This field is required",
+      "minName": "Username must be at least 3 characters",
+      "maxName": "Username cannot exceed 25 characters",
+      "password": "Confirmation is required",
+      "confPassword": "Passwords do not match"
     }
   }
 }
