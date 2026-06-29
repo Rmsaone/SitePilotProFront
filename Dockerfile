@@ -1,26 +1,18 @@
-# ─── Stage 1 : Build ───────────────────────────────────────────────────────────
-FROM node:22-alpine AS builder
+# Dev — hot-reload + MSW activé (import.meta.env.DEV = true)
+FROM node:22-alpine
 
 RUN corepack enable && corepack prepare pnpm@latest --activate
 
 WORKDIR /app
 
 COPY package.json pnpm-lock.yaml ./
-RUN pnpm install --frozen-lockfile
+RUN pnpm install
 
 COPY . .
-RUN pnpm build
 
-# ─── Stage 2 : Serve ───────────────────────────────────────────────────────────
-FROM node:22-alpine AS runner
-
-WORKDIR /app
-
-COPY --from=builder /app/.output ./output
-
-ENV NODE_ENV=production
+ENV NODE_ENV=development
 ENV PORT=3000
 
 EXPOSE 3000
 
-CMD ["node", "output/server/index.mjs"]
+CMD ["pnpm", "dev", "--host", "0.0.0.0"]
