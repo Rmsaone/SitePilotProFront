@@ -1,88 +1,56 @@
 <script setup lang="ts">
 import type { DropdownMenuItem } from '@nuxt/ui';
-import Avatar from '~/assets/images/avatar.png';
 
-defineProps<{
-  collapsed?: boolean;
-}>();
+const { t } = useI18n();
+const { logout } = useSanctumAuth();
+const { fullName, initials } = useAuthUser();
 
-const colorMode = useColorMode();
-
-const user = ref({
-  name: 'Utilisateur',
-  avatar: {
-    src: Avatar,
-    alt: 'Utilisateur'
-  }
-});
-
-const items = computed<DropdownMenuItem[][]>(() => ([[{
+const items = computed<DropdownMenuItem[][]>(() => [[{
   type: 'label',
-  label: user.value.name,
-  avatar: user.value.avatar
+  label: fullName.value,
+  avatar: { text: initials.value }
 }], [{
-  label: 'Compte',
-  icon: 'i-lucide-user'
+  label: t('base.userMenu.account'),
+  icon: 'i-lucide-user',
+  to: '/account'
 }, {
-  label: 'Abonnement',
-  icon: 'i-lucide-credit-card'
+  label: t('base.userMenu.appearance'),
+  icon: 'i-lucide-palette',
+  to: { path: '/account', query: { tab: 'appearance' } }
 }, {
-  label: 'Settings',
-  icon: 'i-lucide-settings',
-  to: '/settings'
-}], [{
-  label: 'Appearance',
-  icon: 'i-lucide-sun-moon',
-  children: [{
-    label: 'Light',
-    icon: 'i-lucide-sun',
-    type: 'checkbox',
-    checked: colorMode.value === 'light',
-    onSelect(e: Event) {
-      e.preventDefault();
-
-      colorMode.preference = 'light';
-    }
-  }, {
-    label: 'Dark',
-    icon: 'i-lucide-moon',
-    type: 'checkbox',
-    checked: colorMode.value === 'dark',
-    onUpdateChecked(checked: boolean) {
-      if (checked) {
-        colorMode.preference = 'dark';
-      }
-    },
-    onSelect(e: Event) {
-      e.preventDefault();
-    }
-  }]
-}], [{
-  label: 'Documentation',
+  label: t('base.userMenu.documentation'),
   icon: 'i-lucide-book-open',
-  to: 'https://ui.nuxt.com/docs/getting-started/installation/nuxt',
-  target: '_blank'
-},
-{
-  label: 'Log out',
-  icon: 'i-lucide-log-out'
-}]]));
+  to: '/documentation'
+}, {
+  label: t('base.userMenu.subscription'),
+  icon: 'i-lucide-credit-card',
+  to: { path: '/account', query: { tab: 'subscription' } }
+}, {
+  label: t('base.userMenu.settings'),
+  icon: 'i-lucide-settings',
+  disabled: true
+}], [{
+  label: t('base.userMenu.logout'),
+  icon: 'i-lucide-log-out',
+  color: 'error',
+  onSelect: () => logout()
+}]]);
 </script>
 
 <template>
   <UDropdownMenu
     :items="items"
-    :content="{ align: 'center', collisionPadding: 12 }"
+    :content="{ align: 'end', collisionPadding: 12 }"
+    :ui="{ content: 'w-52' }"
   >
     <UButton
-      v-bind="{
-        ...user,
-        label: collapsed ? undefined : user?.name,
-        trailingIcon: collapsed ? undefined : 'i-lucide-chevrons-up-down'
-      }"
       color="neutral"
-      variant="ghost"
-      block
+      variant="outline"
+      trailing-icon="i-lucide-chevron-down"
+      :avatar="{ text: initials, size: '2xs', ui: { root: 'bg-primary-700', fallback: 'text-white' } }"
+      :label="fullName"
+      :aria-label="t('base.userMenu.label')"
+      :ui="{ label: 'hidden sm:inline' }"
     />
   </UDropdownMenu>
 </template>

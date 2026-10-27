@@ -22,6 +22,33 @@
       "title": "Créer un compte",
       "register": "S'inscrire",
       "ConfirmationPassword": "Confirmer mot de passe"
+    },
+    "nav": {
+      "dashboard": "Tableau de Bord",
+      "worksites": "Chantier",
+      "clients": "Clients",
+      "quotes": "Devis",
+      "invoices": "Factures",
+      "purchases": "Achats",
+      "timeTracking": "Suivi du temps",
+      "reports": "Rapports",
+      "soon": "Bientôt",
+      "main": "Navigation principale"
+    },
+    "userMenu": {
+      "account": "Compte",
+      "appearance": "Apparence",
+      "documentation": "Documentation",
+      "subscription": "Abonnement",
+      "settings": "Paramètres",
+      "logout": "Se déconnecter",
+      "label": "Menu utilisateur"
+    },
+    "notifications": "Notifications",
+    "skipToContent": "Aller au contenu principal",
+    "toast": {
+      "errorTitle": "Une erreur est survenue",
+      "comingSoon": "Fonctionnalité bientôt disponible"
     }
   }
 }

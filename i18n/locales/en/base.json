@@ -1,6 +1,33 @@
 {
   "base": {
-    "welcome": "Hello Welcome"
+    "welcome": "Hello Welcome",
+    "nav": {
+      "dashboard": "Dashboard",
+      "worksites": "Worksite",
+      "clients": "Clients",
+      "quotes": "Quotes",
+      "invoices": "Invoices",
+      "purchases": "Purchases",
+      "timeTracking": "Time tracking",
+      "reports": "Reports",
+      "soon": "Soon",
+      "main": "Main navigation"
+    },
+    "userMenu": {
+      "account": "Account",
+      "appearance": "Appearance",
+      "documentation": "Documentation",
+      "subscription": "Subscription",
+      "settings": "Settings",
+      "logout": "Log out",
+      "label": "User menu"
+    },
+    "notifications": "Notifications",
+    "skipToContent": "Skip to main content",
+    "toast": {
+      "errorTitle": "Something went wrong",
+      "comingSoon": "Feature coming soon"
+    }
   },
   "modal": {
     "titleDelete": "Confirm deletion",
@@ -12,16 +39,15 @@
     "delete": "Delete",
     "cancel": "Cancel"
   },
-    "login": {
-      "title": "Sign in",
-      "connexion": "Login",
-      "mail": "Email",
-      "password": "Password"
-    },
-    "register": {
-      "title": "Create an account",
-      "register": "Sign up",
-      "ConfirmationPassword": "Confirm password"
-    }
+  "login": {
+    "title": "Sign in",
+    "connexion": "Login",
+    "mail": "Email",
+    "password": "Password"
+  },
+  "register": {
+    "title": "Create an account",
+    "register": "Sign up",
+    "ConfirmationPassword": "Confirm password"
+  }
 }
-
