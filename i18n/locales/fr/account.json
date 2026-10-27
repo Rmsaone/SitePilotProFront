@@ -1,0 +1,83 @@
+{
+  "account": {
+    "title": "Mon compte",
+    "tabs": {
+      "profile": "Profil",
+      "security": "Sécurité",
+      "subscription": "Abonnement",
+      "appearance": "Apparence"
+    },
+    "profile": {
+      "personalInfo": "Informations personnelles",
+      "firstName": "Prénom",
+      "lastName": "Nom",
+      "email": "Email",
+      "phone": "Téléphone",
+      "roleAccess": "Rôle & accès",
+      "save": "Enregistrer les modifications",
+      "saved": "Modifications enregistrées"
+    },
+    "security": {
+      "changePassword": "Changer le mot de passe",
+      "currentPassword": "Mot de passe actuel",
+      "newPassword": "Nouveau mot de passe",
+      "confirmPassword": "Confirmer le nouveau mot de passe",
+      "hints": [
+        "8 caractères minimum",
+        "1 majuscule",
+        "1 chiffre",
+        "1 caractère spécial"
+      ],
+      "submit": "Mettre à jour",
+      "saved": "Mot de passe mis à jour",
+      "dangerZone": "Zone de danger",
+      "logoutAll": "Se déconnecter de tous les appareils",
+      "logoutAllHint": "Révoque toutes les sessions actives",
+      "logoutAllButton": "Se déconnecter"
+    },
+    "subscription": {
+      "currentPlan": "Plan actuel",
+      "planName": "Plan Pro",
+      "active": "Actif",
+      "planFeatures": "Chantiers illimités · Facturation · Rapports avancés",
+      "renewal": "Renouvellement le",
+      "renewalDate": "1 août 2026",
+      "price": "89",
+      "perMonth": "€/mois",
+      "billingInfo": "HT · facturation mensuelle",
+      "usage": "Utilisation",
+      "activeWorksites": "Chantiers actifs",
+      "users": "Utilisateurs",
+      "storage": "Stockage",
+      "unlimited": "Illimité",
+      "billingHistory": "Historique de facturation",
+      "downloadAll": "Tout télécharger",
+      "period": "Période",
+      "amount": "Montant",
+      "status": "Statut",
+      "invoice": "Facture",
+      "paid": "Payé"
+    },
+    "appearance": {
+      "theme": "Thème de l'interface",
+      "light": "Clair",
+      "lightDesc": "Fond blanc, texte sombre",
+      "dark": "Sombre",
+      "darkDesc": "Fond sombre, texte clair",
+      "system": "Système",
+      "systemDesc": "Suit votre OS",
+      "active": "Actif",
+      "themeLabel": "Thème {label}",
+      "accessibility": "Accessibilité",
+      "accessibilityText": "Le mode sombre réduit la fatigue visuelle et améliore le confort lors d'utilisation prolongée. Les ratios de contraste respectent les exigences",
+      "accessibilityCriterion": "RGAA 4.1 — Critère 3.2",
+      "accessibilityTextEnd": "(≥ 4,5:1 pour le texte normal).",
+      "ratios": {
+        "lightText": "Mode clair — ratio texte",
+        "darkText": "Mode sombre — ratio texte",
+        "primaryButtons": "Boutons primaires",
+        "secondaryText": "Textes secondaires"
+      }
+    }
+  }
+}
