@@ -1,0 +1,17 @@
+node_modules
+.nuxt
+.output
+.nitro
+.cache
+dist
+coverage
+.git
+.github
+.idea
+.vscode
+.env
+.env.*
+!.env.example
+*.log
+Dockerfile
+compose.yaml
