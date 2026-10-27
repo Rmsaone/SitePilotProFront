@@ -4,7 +4,8 @@ export default defineNuxtConfig({
     '@nuxt/ui',
     '@nuxtjs/i18n',
     'nuxt-auth-sanctum',
-    'dayjs-nuxt'
+    'dayjs-nuxt',
+    '@vee-validate/nuxt'
   ],
 
   ssr: false,
@@ -14,6 +15,14 @@ export default defineNuxtConfig({
   },
 
   css: ['~/assets/css/main.css'],
+
+  runtimeConfig: {
+    public: {
+      demoEmail: '',
+      demoPassword: ''
+    }
+  },
+
   routeRules: {
     '/': { prerender: true }
   },
@@ -29,6 +38,7 @@ export default defineNuxtConfig({
       }
     }
   },
+
   i18n: {
     defaultLocale: 'fr',
     langDir: 'locales',
@@ -43,7 +53,10 @@ export default defineNuxtConfig({
           'fr/base.json',
           'fr/client.json',
           'fr/worksite.json',
-          'fr/home.json'
+          'fr/home.json',
+          'fr/auth.json',
+          'fr/account.json',
+          'fr/documentation.json'
         ]
       },
       {
@@ -55,7 +68,10 @@ export default defineNuxtConfig({
           'en/base.json',
           'en/client.json',
           'en/worksite.json',
-          'en/home.json'
+          'en/home.json',
+          'en/auth.json',
+          'en/account.json',
+          'en/documentation.json'
         ]
       }
     ],
@@ -64,6 +80,25 @@ export default defineNuxtConfig({
       useCookie: true,
       cookieKey: 'i18n_redirected',
       redirectOn: 'root'
+    }
+  },
+  sanctum: {
+    baseUrl: 'http://localhost',
+    mode: 'token',
+    endpoints: {
+      login: '/api/v1/auth/login',
+      logout: '/api/v1/auth/logout',
+      user: '/api/v1/auth/me'
+    },
+    redirect: {
+      keepRequestedRoute: true,
+      onLogin: '/',
+      onLogout: '/login',
+      onAuthOnly: '/login',
+      onGuestOnly: '/'
+    },
+    globalMiddleware: {
+      enabled: true
     }
   }
 });
