@@ -4,56 +4,60 @@ import type { WorksiteInterface } from '~/components/Worksites/Types/worksite.in
 export const worksiteColumns: TableColumn<WorksiteInterface>[] = [
   {
     id: 'expand',
-    header: 'Détails',
+    header: '',
+    enableHiding: false,
     meta: {
       class: {
-        th: 'text-center w-[5%]',
-        td: 'text-center font-medium w-[5%]'
+        th: 'w-12',
+        td: 'w-12'
       }
     }
-
   }, {
-    accessorKey: 'worksiteName',
+    id: 'name_worksite',
+    accessorKey: 'name_worksite',
     header: 'Nom du chantier',
     meta: {
       class: {
-        th: 'text-left w-[20%]',
-        td: 'text-left font-medium w-[20%]'
+        th: 'text-left w-[26%]',
+        td: 'text-left font-medium text-highlighted w-[26%] whitespace-normal'
       }
     }
   }, {
-    accessorKey: 'client',
+    id: 'client',
     header: 'Client',
     meta: {
       class: {
-        th: 'text-left w-[20%]',
-        td: 'text-left font-medium w-[20%]'
+        th: 'text-left w-[18%]',
+        td: 'text-left text-muted w-[18%]'
       }
     }
   }, {
-    accessorKey: 'place',
+    id: 'place',
     header: 'Lieu',
     meta: {
       class: {
-        th: 'text-left w-[20%]',
-        td: 'text-left font-medium w-[20%]'
+        th: 'text-left w-[14%]',
+        td: 'text-left text-muted w-[14%]'
       }
     }
   }, {
-    id: 'startDate',
-    accessorKey: 'startDate',
-    meta: { class: { th: 'text-center w-[10%]', td: 'text-center font-medium w-[10%]' } }
+    id: 'start_date',
+    accessorKey: 'start_date',
+    header: 'Date de début',
+    meta: { class: { th: 'w-[11%]', td: 'text-muted w-[11%]' } }
   }, {
-    id: 'endDate',
-    accessorKey: 'endDate',
-    meta: { class: { th: 'text-center w-[10%]', td: 'text-center font-medium w-[10%]' } }
+    id: 'end_date',
+    accessorKey: 'end_date',
+    header: 'Date de fin',
+    meta: { class: { th: 'w-[11%]', td: 'text-muted w-[11%]' } }
   }, {
-    accessorKey: 'status',
-    header: 'Status',
+    id: 'worksite_status',
+    accessorKey: 'worksite_status',
+    header: 'Statut',
     meta: {
       class: {
-        th: 'text-center w-[10%]',
-        td: 'text-center font-medium w-[10%]'
+        th: 'text-left w-[10%]',
+        td: 'text-left w-[10%]'
       }
     }
   }, {
@@ -62,8 +66,8 @@ export const worksiteColumns: TableColumn<WorksiteInterface>[] = [
     enableHiding: false,
     meta: {
       class: {
-        th: 'text-center w-[10%]',
-        td: 'text-center font-medium w-[10%]'
+        th: 'text-left w-[10%]',
+        td: 'text-left w-[10%]'
       }
     }
   }];

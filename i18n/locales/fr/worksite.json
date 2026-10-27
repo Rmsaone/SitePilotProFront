@@ -4,15 +4,165 @@
     "list": {
       "title": "Liste des chantiers",
       "search": "Recherche de chantier",
-      "statusSearch": "Etat du chantier",
-      "searchPlaceholder": "Par nom, client, lieu ...",
+      "statusSearch": "Statut du chantier",
+      "searchPlaceholder": "Rechercher un chantier...",
+      "allStatuses": "Tous les statuts",
+      "display": "Affichage",
+      "details": "Afficher les détails",
       "name": "Nom du chantier",
       "client": "Client",
       "place": "Lieu",
       "startDate": "Date de début",
-      "endDate":"Date de fin",
-      "status": "Status",
-      "noData": "Aucune chantier trouvée"
+      "endDate": "Date de fin",
+      "status": "Statut",
+      "noData": "Aucun chantier trouvé",
+      "seeDetail": "Voir le détail",
+      "total": "Aucun chantier | {count} chantier au total | {count} chantiers au total",
+      "deleted": "Chantier supprimé"
+    },
+    "form": {
+      "createTitle": "Nouveau chantier",
+      "editTitle": "Modifier le chantier",
+      "createSubtitle": "Sélectionnez un devis accepté pour démarrer",
+      "quote": "Devis accepté lié",
+      "quotePlaceholder": "Sélectionner un devis accepté…",
+      "quoteRequired": "Sélectionnez un devis accepté",
+      "search": "Rechercher...",
+      "noAcceptedQuote": "Aucun devis accepté disponible. Acceptez d'abord un devis.",
+      "linkedClient": "Client lié",
+      "identity": "Identité",
+      "name": "Nom du chantier",
+      "namePlaceholder": "ex. Rénovation Mairie de Limoges",
+      "description": "Description",
+      "descriptionPlaceholder": "Décrivez les travaux à réaliser…",
+      "startDate": "Date de début",
+      "endDate": "Date de fin estimée",
+      "endBeforeStart": "La date de fin doit être après la date de début",
+      "priority": "Priorité",
+      "status": "Statut",
+      "address": "Adresse",
+      "street": "Adresse",
+      "streetPlaceholder": "ex. 12 avenue des Fleurs",
+      "zipCode": "Code postal",
+      "zipInvalid": "Code postal invalide",
+      "city": "Ville",
+      "country": "Pays",
+      "responsibleSection": "Responsable",
+      "responsible": "Responsable du chantier",
+      "responsiblePlaceholder": "Sélectionner un responsable…",
+      "submit": "Créer le chantier",
+      "created": "Chantier créé avec succès",
+      "updated": "Chantier mis à jour"
+    },
+    "detail": {
+      "title": "Chantier",
+      "back": "Tous les chantiers",
+      "close": "Clôturer le chantier",
+      "closed": "Chantier clôturé",
+      "notFound": "Ce chantier est introuvable.",
+      "tabs": {
+        "summary": "Récapitulatif",
+        "quotes": "Devis",
+        "client-invoices": "Factures Client",
+        "suppliers": "Factures Fournisseurs",
+        "subcontractors": "Factures Sous-traitant",
+        "others": "Factures Autres",
+        "workforce": "Répartition Main d'œuvre"
+      }
+    },
+    "summary": {
+      "market": "Montant du marché",
+      "marketSigned": "Marché signé",
+      "noMarket": "Aucun devis accepté",
+      "remainingToSpend": "Reste à dépenser",
+      "withinBudget": "Dans le budget",
+      "overBudget": "Budget dépassé",
+      "remainingToInvoice": "Reste à facturer",
+      "allInvoiced": "Tout facturé",
+      "toInvoice": "À facturer",
+      "pendingInvoices": "Factures en attente",
+      "pendingInvoicesCount": "Aucune facture en attente | {count} facture en attente | {count} factures en attente",
+      "pendingQuotes": "Devis en attente",
+      "pendingQuotesCount": "Aucun devis en attente | {count} devis en attente | {count} devis en attente",
+      "access": "Accéder",
+      "costsTitle": "Récapitulatif des coûts",
+      "totalInvoiced": "Total factures client",
+      "post": "Poste",
+      "purchasePrice": "Prix d'achat",
+      "costPrice": "Prix de revient",
+      "total": "TOTAL",
+      "costs": {
+        "supplier": "Total factures fournisseur",
+        "subcontractor": "Total factures sous-traitant",
+        "other": "Total factures autres",
+        "workforce": "Total frais main d'œuvre"
+      },
+      "result": "Résultat du chantier",
+      "grossMargin": "Marge brute",
+      "netMargin": "Marge nette",
+      "chart": {
+        "title": "Facturé vs. dépensé (cumulé)",
+        "subtitle": "Suivi cumulatif sur les 12 derniers mois",
+        "invoiced": "Facturé",
+        "spent": "Dépensé"
+      }
+    },
+    "tabs": {
+      "allStatuses": "Tous les statuts",
+      "statusFilter": "Filtrer par statut",
+      "invoiceCount": "facture(s) au total",
+      "invoiceEmpty": "Aucune facture trouvée",
+      "addInvoice": "Ajouter une facture",
+      "saved": "Enregistré",
+      "quotes": {
+        "search": "Rechercher un devis...",
+        "count": "devis au total",
+        "empty": "Aucun devis trouvé"
+      },
+      "clientInvoices": {
+        "search": "Rechercher une facture..."
+      },
+      "suppliers": {
+        "search": "Rechercher un fournisseur...",
+        "party": "Fournisseur",
+        "partyPlaceholder": "Nom du fournisseur",
+        "addTitle": "Ajouter une facture fournisseur",
+        "editTitle": "Modifier la facture fournisseur"
+      },
+      "subcontractors": {
+        "search": "Rechercher un sous-traitant...",
+        "party": "Sous-traitant",
+        "partyPlaceholder": "Raison sociale ou nom",
+        "addTitle": "Ajouter une facture sous-traitant",
+        "editTitle": "Modifier la facture sous-traitant"
+      },
+      "others": {
+        "search": "Rechercher une facture...",
+        "party": "Libellé",
+        "partyPlaceholder": "Ex : Location bungalow, frais de déplacement…",
+        "addTitle": "Ajouter une facture — Autres",
+        "editTitle": "Modifier la facture — Autres"
+      },
+      "form": {
+        "date": "Date de facture",
+        "number": "N° de facture",
+        "purchasePrice": "Prix d'achat HT",
+        "costPrice": "Prix de revient HT"
+      },
+      "workforce": {
+        "search": "Rechercher un ouvrier...",
+        "count": "ouvrier(s) au total",
+        "empty": "Aucun ouvrier trouvé",
+        "add": "Ajouter un ouvrier",
+        "addTitle": "Ajouter un ouvrier / salarié",
+        "editTitle": "Modifier l'ouvrier / salarié",
+        "code": "Code salarié",
+        "worker": "Nom complet",
+        "hours": "Heures travaillées",
+        "rate": "Taux horaire",
+        "additionalCosts": "Coûts annexes",
+        "grossCost": "Coût brut"
+      }
     }
   }
 }

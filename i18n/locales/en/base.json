@@ -27,6 +27,24 @@
     "toast": {
       "errorTitle": "Something went wrong",
       "comingSoon": "Feature coming soon"
+    },
+    "actions": {
+      "label": "Actions",
+      "view": "View",
+      "edit": "Edit",
+      "delete": "Delete"
+    },
+    "modal": {
+      "titleDelete": "Confirm deletion",
+      "deleteTarget": "You are about to delete",
+      "irreversibleMessage": "This action is irreversible and cannot be undone."
+    },
+    "btn": {
+      "update": "Edit",
+      "delete": "Delete",
+      "cancel": "Cancel",
+      "deleteForever": "Delete permanently",
+      "save": "Save"
     }
   },
   "modal": {

@@ -5,12 +5,15 @@
     "modal": {
       "titleDelete": "Confirmer suppression",
       "confirmationMessageClient": "Voulez-vous vraiment supprimer le client ?",
-      "irreversibleMessage": "Cette action est irréversible."
+      "irreversibleMessage": "Cette action est irréversible et ne peut pas être annulée.",
+      "deleteTarget": "Vous êtes sur le point de supprimer"
     },
     "btn": {
       "update": "Modifier",
       "delete": "Supprimer",
-      "cancel": "Annuler"
+      "cancel": "Annuler",
+      "deleteForever": "Supprimer définitivement",
+      "save": "Enregistrer"
     },
     "login": {
       "title": "Connectez-vous",
@@ -49,6 +52,12 @@
     "toast": {
       "errorTitle": "Une erreur est survenue",
       "comingSoon": "Fonctionnalité bientôt disponible"
+    },
+    "actions": {
+      "label": "Actions",
+      "view": "Voir la fiche",
+      "edit": "Modifier",
+      "delete": "Supprimer"
     }
   }
 }

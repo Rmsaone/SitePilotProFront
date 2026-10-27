@@ -1,30 +1,34 @@
 <script setup lang="ts">
-import type { WorksiteStatusEnum } from '~/components/Worksites/Types/worksiteStatusEnum';
-import { WorksiteStatusEnumMap } from '~/components/Worksites/Types/worksiteStatusEnum';
+import { WorksiteStatusEnum, WorksiteStatusEnumMap } from '~/components/Worksites/Types/worksiteStatusEnum';
 
-const globalFilter = defineModel<string>('globalFilter');
-const selectedStatus = defineModel<WorksiteStatusEnum>('selectedStatus');
+const search = defineModel<string>('search', { default: '' });
+const selectedStatus = defineModel<WorksiteStatusEnum | 'all'>('selectedStatus', { default: 'all' });
 
-const statusOptions = Array.from(WorksiteStatusEnumMap.entries()).map(([key, value]) => ({
-  label: value,
-  value: key as WorksiteStatusEnum
-}));
+const { t } = useI18n();
+
+const statusOptions = computed(() => [
+  { label: t('worksite.list.allStatuses'), value: 'all' as const },
+  ...Object.values(WorksiteStatusEnum).map(status => ({
+    label: WorksiteStatusEnumMap.get(status) ?? status,
+    value: status
+  }))
+]);
 </script>
 
 <template>
-  <div class="flex px-4 py-3.5 gap-2">
+  <div class="flex gap-2 flex-1 min-w-0">
     <UInput
-      v-model="globalFilter"
-      class="w-sm"
-      placeholder="Rechercher un chantier ..."
+      v-model="search"
+      class="flex-1 max-w-sm"
+      :placeholder="t('worksite.list.searchPlaceholder')"
       icon="i-lucide-search"
+      :aria-label="t('worksite.list.search')"
     />
     <USelect
       v-model="selectedStatus"
       :items="statusOptions"
-      class="w-48"
-      placeholder="Sélectionner un statut"
-      trailing-icon="i-lucide-arrow-down"
+      class="w-44"
+      :aria-label="t('worksite.list.statusSearch')"
     />
   </div>
 </template>
