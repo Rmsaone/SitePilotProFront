@@ -203,6 +203,8 @@ function onDataChanged(): void {
         <WorksitesTabsQuotesTab
           v-else-if="tab === 'quotes'"
           :worksite-id="worksiteId"
+          :client-id="worksite?.client?.id"
+          @changed="onDataChanged"
         />
         <WorksitesTabsClientInvoicesTab
           v-else-if="tab === 'client-invoices'"

@@ -32,7 +32,10 @@
       "label": "Actions",
       "view": "View",
       "edit": "Edit",
-      "delete": "Delete"
+      "delete": "Delete",
+      "convert": "Convert to invoice",
+      "convertSoon": "Convert to invoice: coming soon",
+      "download": "Download"
     },
     "modal": {
       "titleDelete": "Confirm deletion",

@@ -3,16 +3,25 @@ withDefaults(defineProps<{
   view?: boolean;
   edit?: boolean;
   remove?: boolean;
+  /** Extra "convert to invoice" action (quotes) */
+  convert?: boolean;
+  convertDisabled?: boolean;
+  download?: boolean;
 }>(), {
   view: true,
   edit: true,
-  remove: true
+  remove: true,
+  convert: false,
+  convertDisabled: false,
+  download: false
 });
 
 const emit = defineEmits<{
   view: [];
   edit: [];
   remove: [];
+  convert: [];
+  download: [];
 }>();
 
 const { t } = useI18n();
@@ -38,6 +47,21 @@ const { t } = useI18n();
       />
     </UTooltip>
     <UTooltip
+      v-if="convert"
+      :text="convertDisabled ? t('base.actions.convertSoon') : t('base.actions.convert')"
+    >
+      <UButton
+        icon="i-lucide-arrow-right-left"
+        color="neutral"
+        variant="ghost"
+        size="sm"
+        class="text-violet-600 disabled:opacity-40"
+        :disabled="convertDisabled"
+        :aria-label="t('base.actions.convert')"
+        @click.stop="emit('convert')"
+      />
+    </UTooltip>
+    <UTooltip
       v-if="edit"
       :text="t('base.actions.edit')"
     >
@@ -48,6 +72,19 @@ const { t } = useI18n();
         size="sm"
         :aria-label="t('base.actions.edit')"
         @click.stop="emit('edit')"
+      />
+    </UTooltip>
+    <UTooltip
+      v-if="download"
+      :text="t('base.actions.download')"
+    >
+      <UButton
+        icon="i-lucide-arrow-down-to-line"
+        color="success"
+        variant="ghost"
+        size="sm"
+        :aria-label="t('base.actions.download')"
+        @click.stop="emit('download')"
       />
     </UTooltip>
     <UTooltip

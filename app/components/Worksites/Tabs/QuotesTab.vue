@@ -1,6 +1,7 @@
 <script setup lang="ts">
 import type { TableColumn } from '@nuxt/ui';
 import type { Paginated } from '~/components/Tables/Types/api.interface';
+import { formatDate } from '~/components/Tables/utils/dateUtils';
 import { formatMoney, sumMoney, formatEuros } from '~/components/Tables/utils/moneyUtils';
 import {
   QuoteStatusColorMap,
@@ -12,13 +13,18 @@ import { type WorksiteQuote, worksiteClientName } from '~/components/Worksites/T
 
 const props = defineProps<{
   worksiteId: number;
+  clientId?: number | null;
+}>();
+
+const emit = defineEmits<{
+  changed: [];
 }>();
 
 const { t } = useI18n();
 const search = ref('');
 const statusFilter = ref<QuoteStatusEnum | 'all'>('all');
 
-const { data, status } = useApi<Paginated<WorksiteQuote>>('/api/v1/quotes', {
+const { data, status, refresh } = useApi<Paginated<WorksiteQuote>>('/api/v1/quotes', {
   query: { worksite_id: props.worksiteId, per_page: 100 }
 });
 
@@ -39,11 +45,19 @@ const rows = computed(() => (data.value?.data ?? []).filter((quote) => {
 const columns: TableColumn<WorksiteQuote>[] = [
   { accessorKey: 'quote_number', header: 'N°', meta: { class: { td: 'font-mono font-medium text-info' } } },
   { id: 'client', header: 'Nom du client', meta: { class: { td: 'font-medium text-highlighted' } } },
-  { accessorKey: 'issue_date', header: 'Date d\'émission', meta: { class: { td: 'text-muted whitespace-nowrap' } } },
+  { id: 'issue_date', header: 'Date d\'émission', meta: { class: { td: 'text-muted whitespace-nowrap' } } },
   { id: 'tva', header: 'TVA' },
   { accessorKey: 'quote_status', header: 'Statut' },
   { id: 'amount', header: 'Montant HT', footer: '', meta: { class: { th: 'text-right', td: 'text-right font-semibold text-highlighted whitespace-nowrap' } } }
 ];
+
+const formOpen = ref(false);
+
+async function onSaved(): Promise<void> {
+  formOpen.value = false;
+  emit('changed');
+  await refresh();
+}
 </script>
 
 <template>
@@ -52,6 +66,8 @@ const columns: TableColumn<WorksiteQuote>[] = [
     :search-placeholder="t('worksite.tabs.quotes.search')"
     :count="rows.length"
     :count-label="t('worksite.tabs.quotes.count')"
+    :add-label="t('quote.add')"
+    @add="formOpen = true"
   >
     <template #filters>
       <USelect
@@ -67,8 +83,12 @@ const columns: TableColumn<WorksiteQuote>[] = [
       :columns="columns"
       :loading="status === 'pending'"
       :empty="t('worksite.tabs.quotes.empty')"
-      :ui="{ th: 'text-[11px] uppercase tracking-[0.05em] text-muted', td: 'text-[13px]', tfoot: 'bg-info/5' }"
+      :ui="{ th: 'text-[11px] uppercase tracking-[0.05em] text-muted', td: 'text-[13px]', tr: 'cursor-pointer', tfoot: 'bg-info/5' }"
+      @select="(_event, row) => navigateTo(`/quote/${row.original.id}`)"
     >
+      <template #issue_date-cell="{ row }">
+        {{ formatDate(row.original.issue_date) }}
+      </template>
       <template #client-cell="{ row }">
         {{ worksiteClientName(row.original.client) }}
       </template>
@@ -76,7 +96,7 @@ const columns: TableColumn<WorksiteQuote>[] = [
         <UBadge
           color="neutral"
           variant="soft"
-          :label="`${TvaRateMap[row.original.tva_rate] ?? 0} %`"
+          :label="`${(row.original.tva_rate_numeric ?? TvaRateMap[row.original.tva_rate] ?? 0).toLocaleString('fr-FR')} %`"
         />
       </template>
       <template #quote_status-cell="{ row }">
@@ -96,4 +116,12 @@ const columns: TableColumn<WorksiteQuote>[] = [
       </template>
     </UTable>
   </WorksitesTabsTabShell>
+
+  <QuotesQuoteFormModal
+    v-model:open="formOpen"
+    :quote-id="null"
+    :client-id="clientId"
+    :worksite-id="worksiteId"
+    @saved="onSaved"
+  />
 </template>

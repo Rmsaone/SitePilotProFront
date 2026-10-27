@@ -21,8 +21,10 @@ export interface WorksiteQuote {
   quote_number: string;
   issue_date: string;
   quote_status: string;
+  quote_status_title: string;
   subtotal_ht: Money;
   tva_rate: string;
+  tva_rate_numeric: number;
   client?: WorksiteClient;
 }
 

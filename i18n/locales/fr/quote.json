@@ -1,0 +1,85 @@
+{
+  "quote": {
+    "add": "Créer un devis",
+    "list": {
+      "title": "Liste des devis",
+      "searchPlaceholder": "Rechercher un devis...",
+      "statusFilter": "Statut du devis",
+      "allStatuses": "Tous les statuts",
+      "noData": "Aucun devis trouvé",
+      "total": "Aucun devis | {count} devis au total | {count} devis au total",
+      "deleted": "Devis supprimé"
+    },
+    "form": {
+      "createTitle": "Nouveau devis",
+      "editTitle": "Modifier le devis",
+      "subtitle": "Créez votre devis et ajoutez vos lignes produits",
+      "client": "Client lié",
+      "clientPlaceholder": "Sélectionner un client…",
+      "clientRequired": "Sélectionnez un client",
+      "worksite": "Chantier lié",
+      "worksitePlaceholder": "Aucun chantier associé",
+      "issueDate": "Date d'émission",
+      "validityDate": "Date de validité (min. {months} mois)",
+      "validityHint": "Par défaut : 3 mois",
+      "validityMin": "La validité doit être d'au moins {months} mois après l'émission",
+      "defaultCategory": "Lot 1 — Gros œuvre",
+      "newCategory": "Nouvelle catégorie",
+      "categoryPlaceholder": "Nom de la catégorie",
+      "linePlaceholder": "Description du poste…",
+      "addLine": "Ajouter une ligne",
+      "addCategory": "Ajouter une catégorie",
+      "removeLine": "Supprimer la ligne",
+      "removeCategory": "Supprimer la catégorie",
+      "linesRequired": "Ajoutez au moins une ligne",
+      "quantityPositive": "Doit être supérieur à 0",
+      "tvaRate": "Taux TVA",
+      "saveDraft": "Enregistrer brouillon",
+      "submit": "Créer le devis",
+      "updated": "Devis mis à jour",
+      "linesInvalid": "Complétez les lignes en rouge (description, quantité > 0, prix unitaire)."
+    },
+    "lines": {
+      "description": "Description",
+      "quantity": "Qté",
+      "unit": "Unité",
+      "unitPrice": "P.U. HT",
+      "total": "Total HT"
+    },
+    "totals": {
+      "ht": "Total HT",
+      "tva": "TVA ({rate} %)",
+      "ttc": "Total TTC"
+    },
+    "popup": {
+      "title": "Devis créé avec succès !",
+      "subtitle": "Souhaitez-vous envoyer ce devis par email ?",
+      "sendByEmail": "Envoyer par email",
+      "sendByEmailHint": "Transmettre le devis à votre client",
+      "open": "Voir le devis",
+      "openHint": "Ouvrir le document",
+      "dismiss": "Continuer sans envoyer"
+    },
+    "detail": {
+      "title": "Devis",
+      "back": "Retour aux devis",
+      "notFound": "Ce devis est introuvable.",
+      "sendByEmail": "Envoyer par email",
+      "download": "Télécharger PDF"
+    },
+    "document": {
+      "title": "DEVIS",
+      "issuer": "Émetteur",
+      "client": "Client",
+      "issueDate": "Date d'émission",
+      "validityDate": "Date de validité",
+      "status": "Statut",
+      "worksite": "Chantier",
+      "conditions": "Conditions & validité",
+      "conditionsText": "Ce devis est valable jusqu'au {date}. Tous travaux supplémentaires feront l'objet d'un avenant. Paiement : 30 % à la commande, solde à réception des travaux.",
+      "signature": "Signature client",
+      "signatureHint": "Bon pour accord — Date et signature :",
+      "page": "Page 1/1"
+    }
+  }
+}

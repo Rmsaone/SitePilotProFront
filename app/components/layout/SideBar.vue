@@ -29,8 +29,10 @@ const links = computed<NavigationMenuItem[][]>(() => [[{
 }, {
   label: t('base.nav.quotes'),
   icon: 'i-lucide-file-text',
-  disabled: true,
-  badge: t('base.nav.soon')
+  to: '/quote',
+  onSelect: () => {
+    open.value = false;
+  }
 }, {
   label: t('base.nav.invoices'),
   icon: 'i-lucide-receipt',
