@@ -1,0 +1,30 @@
+{
+  "documentation": {
+    "title": "Documentation",
+    "heading": "Technical documentation",
+    "subtitle": "Lighthouse audit · RGAA 4.1 compliance · Updated July 2026",
+    "lighthouseTitle": "Lighthouse audit — SitePilotPro",
+    "lighthouseNote": "Simulated scores based on a production deployment with CDN, lazy-loaded images and code splitting.",
+    "lighthouseNoteLink": "The full audit is available via",
+    "lighthouseNoteTool": "Chrome DevTools → Lighthouse",
+    "rgaaTitle": "RGAA 4.1 compliance",
+    "compliant": "{count} compliant",
+    "partial": "{count} partial",
+    "criterion": "Criterion",
+    "label": "Title",
+    "status": "Status",
+    "note": "Note",
+    "changesTitle": "Changes made for compliance",
+    "score": {
+      "excellent": "Excellent",
+      "good": "Good",
+      "improve": "Needs work"
+    },
+    "statuses": {
+      "pass": "Compliant",
+      "warn": "Partial",
+      "fail": "Non-compliant",
+      "na": "N/A"
+    }
+  }
+}
