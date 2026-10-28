@@ -60,7 +60,8 @@
       "delete": "Supprimer",
       "convert": "Convertir en facture",
       "convertSoon": "Conversion en facture : bientôt disponible",
-      "download": "Télécharger"
+      "download": "Télécharger",
+      "convertAcceptedOnly": "Seul un devis accepté peut être converti en facture"
     }
   }
 }

@@ -48,7 +48,7 @@ const { t } = useI18n();
     </UTooltip>
     <UTooltip
       v-if="convert"
-      :text="convertDisabled ? t('base.actions.convertSoon') : t('base.actions.convert')"
+      :text="convertDisabled ? t('base.actions.convertAcceptedOnly') : t('base.actions.convert')"
     >
       <UButton
         icon="i-lucide-arrow-right-left"

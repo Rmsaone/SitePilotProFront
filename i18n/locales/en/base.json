@@ -35,7 +35,8 @@
       "delete": "Delete",
       "convert": "Convert to invoice",
       "convertSoon": "Convert to invoice: coming soon",
-      "download": "Download"
+      "download": "Download",
+      "convertAcceptedOnly": "Only an accepted quote can be converted to an invoice"
     },
     "modal": {
       "titleDelete": "Confirm deletion",

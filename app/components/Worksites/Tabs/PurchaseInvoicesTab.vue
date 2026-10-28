@@ -26,6 +26,7 @@ const { t } = useI18n();
 const toast = useToast();
 const client = useSanctumClient();
 const { handle } = useApiErrors();
+const { download } = useAttachmentDownload();
 
 const endpoint = computed(() => ENDPOINTS[props.kind]);
 const search = ref('');
@@ -48,6 +49,7 @@ const columns = computed<TableColumn<PurchaseInvoice>[]>(() => [
   { accessorKey: 'invoice_description', header: t(`worksite.tabs.${props.kind}.party`), meta: { class: { td: 'font-medium text-highlighted whitespace-normal' } } },
   { id: 'purchase_price', header: 'Prix d\'achat', footer: '', meta: { class: { th: 'text-right', td: 'text-right font-semibold text-toned whitespace-nowrap' } } },
   { id: 'cost_price', header: 'Prix de revient', meta: { class: { th: 'text-right', td: 'text-right font-semibold text-toned whitespace-nowrap' } } },
+  { id: 'attachment', header: '', meta: { class: { th: 'w-10', td: 'w-10' } } },
   { id: 'actions', header: 'Actions' }
 ]);
 
@@ -124,6 +126,21 @@ async function confirmDelete(): Promise<void> {
       </template>
       <template #cost_price-cell="{ row }">
         {{ formatMoney(row.original.cost_price) }}
+      </template>
+      <template #attachment-cell="{ row }">
+        <UTooltip
+          v-if="row.original.has_attachment"
+          :text="row.original.attachment_name ?? ''"
+        >
+          <UButton
+            icon="i-lucide-paperclip"
+            color="neutral"
+            variant="ghost"
+            size="sm"
+            :aria-label="t('worksite.tabs.downloadAttachment')"
+            @click.stop="download(`${endpoint}/${row.original.id}/attachment`, row.original.attachment_name ?? 'facture')"
+          />
+        </UTooltip>
       </template>
       <template #actions-cell="{ row }">
         <TablesComponentsRowActions

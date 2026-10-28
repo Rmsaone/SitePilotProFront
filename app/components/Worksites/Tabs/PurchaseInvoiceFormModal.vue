@@ -47,11 +47,16 @@ const [numberInvoice] = defineField('number_invoice');
 const [description] = defineField('invoice_description');
 const [purchasePrice] = defineField('purchase_price');
 const [costPrice] = defineField('cost_price');
+const attachment = ref<File | null>(null);
+const attachmentError = ref<string>();
 
 watch(open, (value) => {
   if (!value) {
     return;
   }
+
+  attachment.value = null;
+  attachmentError.value = undefined;
 
   resetForm({
     values: props.invoice
@@ -68,13 +73,27 @@ watch(open, (value) => {
 
 const onSubmit = handleSubmit(async (values) => {
   try {
+    // multipart (PUT is spoofed: PHP does not parse multipart PUT bodies).
+    const body = new FormData();
+    Object.entries({ ...values, worksite_id: props.worksiteId }).forEach(([key, value]) => body.append(key, String(value)));
+
+    if (attachment.value) {
+      body.append('attachment', attachment.value);
+    }
+    if (props.invoice) {
+      body.append('_method', 'PUT');
+    }
+
     await client(props.invoice ? `${props.endpoint}/${props.invoice.id}` : props.endpoint, {
-      method: props.invoice ? 'put' : 'post',
-      body: { ...values, worksite_id: props.worksiteId }
+      method: 'post',
+      body
     });
     emit('saved');
   } catch (error) {
-    handle(error, setErrors);
+    handle(error, (serverErrors) => {
+      setErrors(serverErrors);
+      attachmentError.value = serverErrors.attachment;
+    });
   }
 });
 </script>
@@ -178,6 +197,21 @@ const onSubmit = handleSubmit(async (values) => {
             />
           </UFormField>
         </div>
+        <UFormField
+          :label="t('worksite.tabs.form.attachment')"
+          name="attachment"
+          :hint="invoice?.attachment_name ?? undefined"
+          :error="attachmentError"
+        >
+          <UFileUpload
+            v-model="attachment"
+            accept="application/pdf,image/png,image/jpeg"
+            icon="i-lucide-paperclip"
+            :label="t('worksite.tabs.form.attachmentLabel')"
+            layout="list"
+            class="w-full min-h-24"
+          />
+        </UFormField>
       </form>
     </template>
 

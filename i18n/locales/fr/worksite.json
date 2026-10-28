@@ -147,7 +147,9 @@
         "date": "Date de facture",
         "number": "N° de facture",
         "purchasePrice": "Prix d'achat HT",
-        "costPrice": "Prix de revient HT"
+        "costPrice": "Prix de revient HT",
+        "attachment": "Facture scannée (PDF, JPG, PNG)",
+        "attachmentLabel": "Glissez la facture ici ou cliquez pour la sélectionner"
       },
       "workforce": {
         "search": "Rechercher un ouvrier...",
@@ -162,7 +164,8 @@
         "rate": "Taux horaire",
         "additionalCosts": "Coûts annexes",
         "grossCost": "Coût brut"
-      }
+      },
+      "downloadAttachment": "Télécharger la pièce jointe"
     }
   }
 }

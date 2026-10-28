@@ -1,3 +1,4 @@
+import type { ClientInvoice } from '~/components/Invoices/Types/invoice.interface';
 import type { Quote } from '~/components/Quotes/Types/quote.interface';
 import { formatMoney } from '~/components/Tables/utils/moneyUtils';
 
@@ -15,4 +16,20 @@ export function quoteMailto(quote: Quote): string {
   ].join('\n');
 
   return `mailto:${quote.client?.email ?? ''}?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;
+}
+
+/**
+ * mailto: link to send an invoice to its client.
+ */
+export function invoiceMailto(invoice: ClientInvoice): string {
+  const subject = `Facture ${invoice.number_invoice}`;
+  const body = [
+    'Bonjour,',
+    '',
+    `Veuillez trouver ci-joint notre facture ${invoice.number_invoice} d'un montant de ${formatMoney(invoice.total_ttc)} TTC.`,
+    '',
+    'Cordialement,'
+  ].join('\n');
+
+  return `mailto:${invoice.client?.email ?? ''}?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;
 }

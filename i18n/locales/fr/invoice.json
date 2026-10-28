@@ -1,0 +1,69 @@
+{
+  "invoice": {
+    "list": {
+      "title": "Liste des factures",
+      "searchPlaceholder": "Rechercher une facture...",
+      "statusFilter": "Statut de paiement",
+      "allStatuses": "Tous les statuts",
+      "noData": "Aucune facture trouvée",
+      "total": "Aucune facture | {count} facture au total | {count} factures au total",
+      "deleted": "Facture supprimée"
+    },
+    "payment": {
+      "title": "Enregistrer un paiement",
+      "status": "Statut de paiement",
+      "date": "Date de paiement",
+      "method": "Mode de paiement",
+      "methodRequired": "Sélectionnez le mode de paiement",
+      "saved": "Paiement enregistré"
+    },
+    "detail": {
+      "title": "Facture",
+      "back": "Retour aux factures",
+      "notFound": "Cette facture est introuvable.",
+      "recordPayment": "Enregistrer un paiement",
+      "sendByEmail": "Envoyer par email",
+      "download": "Télécharger PDF"
+    },
+    "document": {
+      "title": "FACTURE",
+      "billedTo": "Facturé à",
+      "paymentDate": "Date de paiement",
+      "waiting": "En attente",
+      "paymentMethod": "Mode de paiement",
+      "reference": "Référence",
+      "receivedOn": "Reçu le {date} — {method}",
+      "latePenalty": "En cas de retard de paiement, des pénalités de 3× le taux légal s'appliquent."
+    },
+    "convert": {
+      "title": "Convertir en facture",
+      "date": "Date d'émission de la facture",
+      "worksite": "Chantier facturé",
+      "worksitePlaceholder": "Sélectionner un chantier du client…",
+      "hint": "La facture reprend les lignes et le montant du devis. Un devis ne peut être facturé qu'une fois.",
+      "created": "Facture {number} créée"
+    },
+    "import": {
+      "button": "Importer une facture",
+      "title": "Importer une facture",
+      "stepOf": "Étape {step} / 3 — {label}",
+      "steps": {
+        "source": "Source",
+        "worksite": "Chantier",
+        "form": "Formulaire"
+      },
+      "dropLabel": "Glissez votre facture ici",
+      "dropHint": "PDF, JPG ou PNG — 10 Mo max.",
+      "worksiteHint": "Associez cette facture à un chantier existant.",
+      "kinds": {
+        "suppliers": "Fournisseur",
+        "subcontractors": "Sous-traitant",
+        "others": "Autres"
+      },
+      "back": "Retour",
+      "next": "Suivant",
+      "submit": "Enregistrer la facture",
+      "saved": "Facture importée"
+    }
+  }
+}

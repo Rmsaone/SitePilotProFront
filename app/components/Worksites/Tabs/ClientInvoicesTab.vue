@@ -45,7 +45,7 @@ const columns: TableColumn<ClientInvoice>[] = [
   { accessorKey: 'payment_status', header: 'Statut' },
   { id: 'amount', header: 'Montant HT', footer: '', meta: { class: { th: 'text-right', td: 'text-right font-semibold text-highlighted whitespace-nowrap' } } },
   { id: 'payment_date', header: 'Date paiement', meta: { class: { td: 'text-xs text-muted whitespace-nowrap' } } },
-  { accessorKey: 'payment_method', header: 'Mode', meta: { class: { td: 'text-xs text-toned' } } }
+  { accessorKey: 'payment_method_title', header: 'Mode', meta: { class: { td: 'text-xs text-toned' } } }
 ];
 </script>
 
@@ -70,7 +70,8 @@ const columns: TableColumn<ClientInvoice>[] = [
       :columns="columns"
       :loading="status === 'pending'"
       :empty="t('worksite.tabs.invoiceEmpty')"
-      :ui="{ th: 'text-[11px] uppercase tracking-[0.05em] text-muted', td: 'text-[13px]', tfoot: 'bg-info/5' }"
+      :ui="{ th: 'text-[11px] uppercase tracking-[0.05em] text-muted', td: 'text-[13px]', tr: 'cursor-pointer', tfoot: 'bg-info/5' }"
+      @select="(_event, row) => navigateTo(`/invoice/${row.original.id}`)"
     >
       <template #client-cell="{ row }">
         {{ worksiteClientName(row.original.client) }}
@@ -82,7 +83,7 @@ const columns: TableColumn<ClientInvoice>[] = [
         <UBadge
           color="neutral"
           variant="soft"
-          :label="`${row.original.tva_rate} %`"
+          :label="`${row.original.tva_rate_numeric.toLocaleString('fr-FR')} %`"
         />
       </template>
       <template #payment_status-cell="{ row }">

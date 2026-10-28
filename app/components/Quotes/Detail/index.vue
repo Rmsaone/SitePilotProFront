@@ -86,6 +86,7 @@ watch(quote, async (value) => {
 }, { once: true });
 
 const formOpen = ref(false);
+const convertOpen = ref(false);
 
 async function onSaved(): Promise<void> {
   formOpen.value = false;
@@ -160,12 +161,16 @@ async function onSaved(): Promise<void> {
             external
             :label="t('quote.detail.sendByEmail')"
           />
-          <UTooltip :text="t('base.actions.convertSoon')">
+          <UTooltip
+            :text="t('base.actions.convertAcceptedOnly')"
+            :disabled="quote?.quote_status === QuoteStatusEnum.Accept"
+          >
             <UButton
               icon="i-lucide-arrow-right-left"
-              class="bg-violet-600 text-white"
-              disabled
+              class="bg-violet-600 hover:bg-violet-700 text-white disabled:opacity-40"
+              :disabled="quote?.quote_status !== QuoteStatusEnum.Accept"
               :label="t('base.actions.convert')"
+              @click="convertOpen = true"
             />
           </UTooltip>
           <UButton
@@ -426,6 +431,11 @@ async function onSaved(): Promise<void> {
       v-model:open="formOpen"
       :quote-id="quoteId"
       @saved="onSaved"
+    />
+
+    <QuotesConvertToInvoiceModal
+      v-model:open="convertOpen"
+      :quote="quote"
     />
   </div>
 </template>

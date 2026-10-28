@@ -119,6 +119,9 @@ const popupActions = computed(() => createdQuote.value
     ]
   : []);
 
+const convertOpen = ref(false);
+const convertTarget = ref<Quote | null>(null);
+
 // Delete
 const deleteTarget = ref<Quote | null>(null);
 const deleting = ref(false);
@@ -214,8 +217,9 @@ async function confirmDelete(): Promise<void> {
         <template #actions-cell="{ row }">
           <TablesComponentsRowActions
             convert
-            convert-disabled
+            :convert-disabled="row.original.quote_status !== QuoteStatusEnum.Accept"
             download
+            @convert="convertTarget = row.original; convertOpen = true"
             @view="navigateTo(`/quote/${row.original.id}`)"
             @download="navigateTo(`/quote/${row.original.id}?print=1`)"
             @edit="openForm(row.original.id)"
@@ -249,6 +253,11 @@ async function confirmDelete(): Promise<void> {
       :subtitle="t('quote.popup.subtitle')"
       :actions="popupActions"
       :dismiss-label="t('quote.popup.dismiss')"
+    />
+
+    <QuotesConvertToInvoiceModal
+      v-model:open="convertOpen"
+      :quote="convertTarget"
     />
 
     <TablesComponentsDeleteConfirmModal

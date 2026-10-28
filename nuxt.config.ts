@@ -57,7 +57,8 @@ export default defineNuxtConfig({
           'fr/auth.json',
           'fr/account.json',
           'fr/documentation.json',
-          'fr/quote.json'
+          'fr/quote.json',
+          'fr/invoice.json'
         ]
       },
       {
@@ -73,7 +74,8 @@ export default defineNuxtConfig({
           'en/auth.json',
           'en/account.json',
           'en/documentation.json',
-          'en/quote.json'
+          'en/quote.json',
+          'en/invoice.json'
         ]
       }
     ],
