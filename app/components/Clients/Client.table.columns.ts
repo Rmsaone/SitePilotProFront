@@ -3,67 +3,31 @@ import type { ClientInterface } from '~/components/Clients/Types/client.interfac
 
 export const clientColumns: TableColumn<ClientInterface>[] = [
   {
-    id: 'expand',
-    header: 'Détails',
-    meta: {
-      class: {
-        th: 'text-center w-[10%]',
-        td: 'text-center font-medium w-[10%]'
-      }
-    }
+    id: 'name',
+    header: 'Nom du client',
+    meta: { class: { td: 'font-medium' } }
   }, {
-    accessorKey: 'company',
-    header: 'Société',
-    meta: {
-      class: {
-        th: 'text-left w-[15%]',
-        td: 'text-left font-medium w-[15%]'
-      }
-    }
-  }, {
-    accessorKey: 'contact',
-    header: 'Nom du Contact',
-    meta: {
-      class: {
-        th: 'text-left w-[10%]',
-        td: 'text-left font-medium w-[10%]'
-      }
-    }
-  }, {
-    accessorKey: 'address',
-    header: 'Adresse',
-    meta: {
-      class: {
-        th: 'text-left w-[25%]',
-        td: 'text-left font-medium w-[25%]'
-      }
-    }
+    accessorKey: 'contact_name',
+    header: 'Contact',
+    meta: { class: { td: 'text-muted' } }
   }, {
     accessorKey: 'email',
     header: 'Email',
-    meta: {
-      class: {
-        th: 'text-left w-[15%]',
-        td: 'text-left font-medium w-[15%]'
-      }
-    }
+    meta: { class: { td: 'text-muted' } }
   }, {
     accessorKey: 'phone',
     header: 'Téléphone',
-    meta: {
-      class: {
-        th: 'text-left w-[10%]',
-        td: 'text-left font-medium w-[10%]'
-      }
-    }
+    meta: { class: { td: 'text-muted whitespace-nowrap' } }
+  }, {
+    id: 'city',
+    accessorKey: 'city',
+    header: 'Ville',
+    meta: { class: { td: 'text-muted' } }
+  }, {
+    id: 'worksites_count',
+    header: 'Chantiers'
   }, {
     id: 'actions',
     header: 'Actions',
-    enableHiding: false,
-    meta: {
-      class: {
-        th: 'text-center w-[10%]',
-        td: 'text-center font-medium w-[10%]'
-      }
-    }
+    enableHiding: false
   }];

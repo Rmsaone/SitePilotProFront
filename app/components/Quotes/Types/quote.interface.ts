@@ -11,7 +11,7 @@ export interface QuoteClient {
   city?: string;
   zip_code?: number;
   country?: string;
-  siret?: string;
+  siret?: string | null;
 }
 
 /** IndexQuoteResource */

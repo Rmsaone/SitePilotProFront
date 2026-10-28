@@ -67,6 +67,13 @@ const header = reactive({
 const items = ref<Item[]>([]);
 const errors = ref<Record<string, string | undefined>>({});
 const attempted = ref(false);
+const clientFormOpen = ref(false);
+
+function onClientCreated(created: QuoteClient): void {
+  clientFormOpen.value = false;
+  clients.value = [created, ...clients.value];
+  header.client_id = created.id;
+}
 
 let counter = 0;
 const uid = () => `item-${++counter}`;
@@ -353,14 +360,27 @@ async function submit(status: QuoteStatusEnum): Promise<void> {
               required
               :error="errors.client_id"
             >
-              <USelectMenu
-                v-model="header.client_id"
-                :items="clientItems"
-                value-key="value"
-                :placeholder="t('quote.form.clientPlaceholder')"
-                :search-input="{ placeholder: t('worksite.form.search') }"
-                class="w-full"
-              />
+              <div class="flex gap-2">
+                <USelectMenu
+                  v-model="header.client_id"
+                  :items="clientItems"
+                  value-key="value"
+                  :placeholder="t('quote.form.clientPlaceholder')"
+                  :search-input="{ placeholder: t('worksite.form.search') }"
+                  class="flex-1 min-w-0"
+                />
+                <UTooltip :text="t('client.add')">
+                  <UButton
+                    icon="i-lucide-plus"
+                    color="success"
+                    variant="outline"
+                    square
+                    class="border-2 border-dashed ring-0 border-success"
+                    :aria-label="t('client.add')"
+                    @click="clientFormOpen = true"
+                  />
+                </UTooltip>
+              </div>
             </UFormField>
             <UFormField
               :label="t('quote.form.worksite')"
@@ -625,4 +645,10 @@ async function submit(status: QuoteStatusEnum): Promise<void> {
       />
     </template>
   </UModal>
+
+  <ClientsClientFormModal
+    v-model:open="clientFormOpen"
+    :client-id="null"
+    @saved="onClientCreated"
+  />
 </template>

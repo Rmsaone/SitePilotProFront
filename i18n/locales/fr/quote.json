@@ -80,6 +80,13 @@
       "signature": "Signature client",
       "signatureHint": "Bon pour accord — Date et signature :",
       "page": "Page 1/1"
+    },
+    "columns": {
+      "number": "N°",
+      "issueDate": "Date d'émission",
+      "amount": "Montant HT",
+      "tva": "TVA",
+      "status": "Statut"
     }
   }
 }

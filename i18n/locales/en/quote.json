@@ -80,6 +80,13 @@
       "signature": "Client signature",
       "signatureHint": "Approved — Date and signature:",
       "page": "Page 1/1"
+    },
+    "columns": {
+      "number": "No.",
+      "issueDate": "Issue date",
+      "amount": "Amount excl. VAT",
+      "tva": "VAT",
+      "status": "Status"
     }
   }
 }

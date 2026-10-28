@@ -21,6 +21,8 @@ const open = defineModel<boolean>('open', { default: false });
 const props = defineProps<{
   /** null to create a worksite */
   worksiteId: number | null;
+  /** Only offer the accepted quotes of this client (from a client page) */
+  clientId?: number | null;
 }>();
 
 const emit = defineEmits<{
@@ -35,7 +37,7 @@ const isEdit = computed(() => props.worksiteId !== null);
 const loading = ref(false);
 const quotes = ref<WorksiteQuote[]>([]);
 const users = ref<WorksiteUser[]>([]);
-const clientId = ref<number | null>(null);
+const quoteClientId = ref<number | null>(null);
 
 const required = () => z.string({ required_error: t('auth.validation.required') }).trim().min(1, t('auth.validation.required'));
 
@@ -128,7 +130,7 @@ watch(quoteId, (id) => {
     return;
   }
 
-  clientId.value = quote.client?.id ?? null;
+  quoteClientId.value = quote.client?.id ?? null;
 
   if (!values.name_worksite) {
     name.value = `Chantier – ${worksiteClientName(quote.client)}`;
@@ -138,11 +140,11 @@ watch(quoteId, (id) => {
 async function load(): Promise<void> {
   loading.value = true;
   resetForm({ values: { ...defaults } });
-  clientId.value = null;
+  quoteClientId.value = null;
 
   try {
     const [quoteResponse, userResponse, worksiteResponse] = await Promise.all([
-      client<Paginated<WorksiteQuote>>('/api/v1/quotes', { query: { quote_status: 'accept', per_page: 100 } }),
+      client<Paginated<WorksiteQuote>>('/api/v1/quotes', { query: { quote_status: 'accept', client_id: props.clientId ?? undefined, per_page: 100 } }),
       client<Paginated<WorksiteUser>>('/api/v1/users'),
       props.worksiteId !== null
         ? client<Resource<WorksiteDetail>>(`/api/v1/worksites/${props.worksiteId}`)
@@ -154,7 +156,7 @@ async function load(): Promise<void> {
 
     if (worksiteResponse) {
       const worksite = worksiteResponse.data;
-      clientId.value = worksite.client?.id ?? null;
+      quoteClientId.value = worksite.client?.id ?? null;
       resetForm({
         values: {
           quote_id: worksite.quotes?.[0]?.id,
@@ -189,7 +191,7 @@ const onSubmit = handleSubmit(async (formValues) => {
   try {
     const body = {
       ...formValues,
-      client_id: clientId.value,
+      client_id: quoteClientId.value,
       quote_id: formValues.quote_id ?? null,
       user_id: formValues.user_id ?? null,
       start_date: formValues.start_date || null,
