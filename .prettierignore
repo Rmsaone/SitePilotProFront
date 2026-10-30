@@ -1,0 +1,13 @@
+.nuxt
+.output
+node_modules
+dist
+coverage
+README.md
+CHANGELOG.md
+.github
+.husky
+.cfduplication.yml
+package.json
+tsconfig.json
+.eslintrc

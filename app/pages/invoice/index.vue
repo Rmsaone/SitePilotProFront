@@ -1,9 +1,9 @@
 <script lang="ts" setup>
 definePageMeta({
-  i18nTitle: 'client.list.title'
+  i18nTitle: 'invoice.list.title'
 });
 </script>
 
 <template>
-  <Clients />
+  <Invoices />
 </template>

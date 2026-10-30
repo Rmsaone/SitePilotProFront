@@ -1,0 +1,92 @@
+{
+  "quote": {
+    "add": "Create a quote",
+    "list": {
+      "title": "Quotes",
+      "searchPlaceholder": "Search a quote...",
+      "statusFilter": "Quote status",
+      "allStatuses": "All statuses",
+      "noData": "No quote found",
+      "total": "No quote | {count} quote in total | {count} quotes in total",
+      "deleted": "Quote deleted"
+    },
+    "form": {
+      "createTitle": "New quote",
+      "editTitle": "Edit quote",
+      "subtitle": "Create your quote and add your product lines",
+      "client": "Linked client",
+      "clientPlaceholder": "Select a client…",
+      "clientRequired": "Select a client",
+      "worksite": "Linked worksite",
+      "worksitePlaceholder": "No linked worksite",
+      "issueDate": "Issue date",
+      "validityDate": "Valid until (min. {months} months)",
+      "validityHint": "Default: 3 months",
+      "validityMin": "Validity must be at least {months} months after issue",
+      "defaultCategory": "Lot 1 — Structural work",
+      "newCategory": "New category",
+      "categoryPlaceholder": "Category name",
+      "linePlaceholder": "Item description…",
+      "addLine": "Add a line",
+      "addCategory": "Add a category",
+      "removeLine": "Remove line",
+      "removeCategory": "Remove category",
+      "linesRequired": "Add at least one line",
+      "quantityPositive": "Must be greater than 0",
+      "tvaRate": "VAT rate",
+      "saveDraft": "Save draft",
+      "submit": "Create quote",
+      "updated": "Quote updated",
+      "linesInvalid": "Complete the lines in red (description, quantity > 0, unit price)."
+    },
+    "lines": {
+      "description": "Description",
+      "quantity": "Qty",
+      "unit": "Unit",
+      "unitPrice": "Unit price",
+      "total": "Total excl. VAT"
+    },
+    "totals": {
+      "ht": "Total excl. VAT",
+      "tva": "VAT ({rate} %)",
+      "ttc": "Total incl. VAT"
+    },
+    "popup": {
+      "title": "Quote created!",
+      "subtitle": "Would you like to email this quote?",
+      "sendByEmail": "Send by email",
+      "sendByEmailHint": "Send the quote to your client",
+      "open": "Open the quote",
+      "openHint": "Open the document",
+      "dismiss": "Continue without sending"
+    },
+    "detail": {
+      "title": "Quote",
+      "back": "Back to quotes",
+      "notFound": "This quote cannot be found.",
+      "sendByEmail": "Send by email",
+      "download": "Download PDF"
+    },
+    "document": {
+      "title": "QUOTE",
+      "issuer": "Issuer",
+      "client": "Client",
+      "issueDate": "Issue date",
+      "validityDate": "Valid until",
+      "status": "Status",
+      "worksite": "Worksite",
+      "conditions": "Terms & validity",
+      "conditionsText": "This quote is valid until {date}. Any additional work will require an amendment. Payment: 30% on order, balance on completion.",
+      "signature": "Client signature",
+      "signatureHint": "Approved — Date and signature:",
+      "page": "Page 1/1"
+    },
+    "columns": {
+      "number": "No.",
+      "issueDate": "Issue date",
+      "amount": "Amount excl. VAT",
+      "tva": "VAT",
+      "status": "Status"
+    }
+  }
+}

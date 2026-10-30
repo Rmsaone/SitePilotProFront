@@ -1,0 +1,83 @@
+{
+  "account": {
+    "title": "My account",
+    "tabs": {
+      "profile": "Profile",
+      "security": "Security",
+      "subscription": "Subscription",
+      "appearance": "Appearance"
+    },
+    "profile": {
+      "personalInfo": "Personal information",
+      "firstName": "First name",
+      "lastName": "Last name",
+      "email": "Email",
+      "phone": "Phone",
+      "roleAccess": "Role & access",
+      "save": "Save changes",
+      "saved": "Changes saved"
+    },
+    "security": {
+      "changePassword": "Change password",
+      "currentPassword": "Current password",
+      "newPassword": "New password",
+      "confirmPassword": "Confirm new password",
+      "hints": [
+        "At least 8 characters",
+        "1 uppercase letter",
+        "1 number",
+        "1 special character"
+      ],
+      "submit": "Update",
+      "saved": "Password updated",
+      "dangerZone": "Danger zone",
+      "logoutAll": "Log out from all devices",
+      "logoutAllHint": "Revokes all active sessions",
+      "logoutAllButton": "Log out"
+    },
+    "subscription": {
+      "currentPlan": "Current plan",
+      "planName": "Pro plan",
+      "active": "Active",
+      "planFeatures": "Unlimited worksites · Invoicing · Advanced reports",
+      "renewal": "Renews on",
+      "renewalDate": "August 1, 2026",
+      "price": "89",
+      "perMonth": "€/month",
+      "billingInfo": "excl. VAT · billed monthly",
+      "usage": "Usage",
+      "activeWorksites": "Active worksites",
+      "users": "Users",
+      "storage": "Storage",
+      "unlimited": "Unlimited",
+      "billingHistory": "Billing history",
+      "downloadAll": "Download all",
+      "period": "Period",
+      "amount": "Amount",
+      "status": "Status",
+      "invoice": "Invoice",
+      "paid": "Paid"
+    },
+    "appearance": {
+      "theme": "Interface theme",
+      "light": "Light",
+      "lightDesc": "White background, dark text",
+      "dark": "Dark",
+      "darkDesc": "Dark background, light text",
+      "system": "System",
+      "systemDesc": "Follows your OS",
+      "active": "Active",
+      "themeLabel": "{label} theme",
+      "accessibility": "Accessibility",
+      "accessibilityText": "Dark mode reduces eye strain and improves comfort during extended use. Contrast ratios meet the",
+      "accessibilityCriterion": "RGAA 4.1 — Criterion 3.2",
+      "accessibilityTextEnd": "requirements (≥ 4.5:1 for normal text).",
+      "ratios": {
+        "lightText": "Light mode — text ratio",
+        "darkText": "Dark mode — text ratio",
+        "primaryButtons": "Primary buttons",
+        "secondaryText": "Secondary text"
+      }
+    }
+  }
+}

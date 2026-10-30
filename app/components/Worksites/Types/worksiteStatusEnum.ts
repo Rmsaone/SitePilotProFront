@@ -1,35 +1,28 @@
+import type { BadgeColor } from '~/components/Tables/Types/api.interface';
+
+export type { BadgeColor };
+
+/** Mirrors App\Enums\WorksiteStatus. */
 export enum WorksiteStatusEnum {
-  All = 'all',
-  ToDo = 'to_do',
-  InProgress = 'in_progress',
   Pending = 'pending',
-  Finished = 'finished'
+  InProgress = 'in_progress',
+  Paused = 'paused',
+  Finished = 'finished',
+  Canceled = 'canceled'
 }
 
-export const WorksiteStatusEnumMap = new Map<
-  WorksiteStatusEnum,
-  string
->([
-  [WorksiteStatusEnum.All, 'Tout'],
-  [WorksiteStatusEnum.ToDo, 'A faire'],
-  [WorksiteStatusEnum.InProgress, 'En cours'],
+export const WorksiteStatusEnumMap = new Map<WorksiteStatusEnum, string>([
   [WorksiteStatusEnum.Pending, 'En attente'],
-  [WorksiteStatusEnum.Finished, 'Terminé']
+  [WorksiteStatusEnum.InProgress, 'En cours'],
+  [WorksiteStatusEnum.Paused, 'Interruption'],
+  [WorksiteStatusEnum.Finished, 'Terminé'],
+  [WorksiteStatusEnum.Canceled, 'Annulé']
 ]);
 
-export type BadgeColor
-  = 'neutral'
-    | 'error'
-    | 'primary'
-    | 'secondary'
-    | 'success'
-    | 'info'
-    | 'warning';
-
 export const WorksiteStatusColorMap: Record<WorksiteStatusEnum, BadgeColor> = {
-  [WorksiteStatusEnum.All]: 'neutral',
-  [WorksiteStatusEnum.ToDo]: 'info',
+  [WorksiteStatusEnum.Pending]: 'info',
   [WorksiteStatusEnum.InProgress]: 'warning',
-  [WorksiteStatusEnum.Pending]: 'neutral',
+  [WorksiteStatusEnum.Paused]: 'neutral',
   [WorksiteStatusEnum.Finished]: 'success',
+  [WorksiteStatusEnum.Canceled]: 'error'
 };

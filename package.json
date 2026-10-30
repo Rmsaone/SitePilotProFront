@@ -8,19 +8,30 @@
     "preview": "nuxt preview",
     "postinstall": "nuxt prepare",
     "lint": "eslint .",
-    "typecheck": "nuxt typecheck"
+    "lint:fix": "eslint . --fix",
+    "typecheck": "nuxt typecheck",
+    "test": "vitest",
+    "test:run": "vitest run",
+    "test:watch": "vitest watch",
+    "test:ui": "vitest --ui",
+    "ci:local": "npm run lint && npm run typecheck && npm run test"
   },
   "dependencies": {
     "@iconify-json/lucide": "^1.2.89",
     "@iconify-json/simple-icons": "^1.2.70",
     "@nuxt/ui": "^4.6.1",
     "@nuxtjs/i18n": "10.2.4",
+    "@vee-validate/nuxt": "^4.15.1",
+    "@vee-validate/zod": "^4.15.1",
+    "dayjs-nuxt": "2.1.11",
     "nuxt": "^4.3.1",
+    "nuxt-auth-sanctum": "3.0.0",
     "tailwindcss": "^4.2.2"
   },
   "devDependencies": {
     "@nuxt/eslint": "^1.14.0",
     "eslint": "^9.9.0",
+    "prettier": "3.8.3",
     "typescript": "^5.9.3",
     "vue-tsc": "^3.2.4"
   },

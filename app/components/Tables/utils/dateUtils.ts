@@ -1,5 +1,5 @@
 export function formatDate(
-  date: Date | string | undefined,
+  date: Date | string | undefined
 ): string {
   if (!date) {
     return '-';

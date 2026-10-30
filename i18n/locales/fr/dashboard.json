@@ -1,0 +1,40 @@
+{
+  "dashboard": {
+    "actions": {
+      "addInvoice": "Ajouter une facture",
+      "createClient": "Créer un client",
+      "createQuote": "Créer un devis"
+    },
+    "periods": {
+      "month": "Ce mois",
+      "quarter": "Ce trimestre",
+      "year": "Cette année",
+      "all": "Tout"
+    },
+    "trend": "Évolution par rapport à la période précédente",
+    "kpis": {
+      "worksites": "Chantiers en cours",
+      "acceptedQuotes": "Devis acceptés",
+      "invoices": "Factures",
+      "quotes": "Devis créés"
+    },
+    "revenue": {
+      "title": "CA HT",
+      "subtitle": "Factures émises · {period} · hors taxes",
+      "compared": "Comparé à la période précédente"
+    },
+    "remaining": {
+      "title": "Reste à facturer",
+      "worksites": "Aucun chantier | {count} chantier | {count} chantiers",
+      "subtitle": "Sur chantiers actifs (devis acceptés non facturés)",
+      "link": "Voir les chantiers"
+    },
+    "chart": {
+      "title": "Facturé vs. Dépensé",
+      "subtitle": "Comparaison mensuelle — {range}",
+      "invoiced": "Facturé",
+      "spent": "Dépensé",
+      "link": "Voir le détail"
+    }
+  }
+}

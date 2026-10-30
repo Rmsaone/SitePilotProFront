@@ -1,6 +1,55 @@
 {
   "base": {
-    "welcome": "Hello Welcome"
+    "welcome": "Hello Welcome",
+    "nav": {
+      "dashboard": "Dashboard",
+      "worksites": "Worksite",
+      "clients": "Clients",
+      "quotes": "Quotes",
+      "invoices": "Invoices",
+      "purchases": "Purchases",
+      "timeTracking": "Time tracking",
+      "reports": "Reports",
+      "soon": "Soon",
+      "main": "Main navigation"
+    },
+    "userMenu": {
+      "account": "Account",
+      "appearance": "Appearance",
+      "documentation": "Documentation",
+      "subscription": "Subscription",
+      "settings": "Settings",
+      "logout": "Log out",
+      "label": "User menu"
+    },
+    "notifications": "Notifications",
+    "skipToContent": "Skip to main content",
+    "toast": {
+      "errorTitle": "Something went wrong",
+      "comingSoon": "Feature coming soon"
+    },
+    "actions": {
+      "label": "Actions",
+      "view": "View",
+      "edit": "Edit",
+      "delete": "Delete",
+      "convert": "Convert to invoice",
+      "convertSoon": "Convert to invoice: coming soon",
+      "download": "Download",
+      "convertAcceptedOnly": "Only an accepted quote can be converted to an invoice"
+    },
+    "modal": {
+      "titleDelete": "Confirm deletion",
+      "deleteTarget": "You are about to delete",
+      "irreversibleMessage": "This action is irreversible and cannot be undone."
+    },
+    "btn": {
+      "update": "Edit",
+      "delete": "Delete",
+      "cancel": "Cancel",
+      "deleteForever": "Delete permanently",
+      "save": "Save"
+    }
   },
   "modal": {
     "titleDelete": "Confirm deletion",
@@ -12,16 +61,15 @@
     "delete": "Delete",
     "cancel": "Cancel"
   },
-    "login": {
-      "title": "Sign in",
-      "connexion": "Login",
-      "mail": "Email",
-      "password": "Password"
-    },
-    "register": {
-      "title": "Create an account",
-      "register": "Sign up",
-      "ConfirmationPassword": "Confirm password"
-    }
+  "login": {
+    "title": "Sign in",
+    "connexion": "Login",
+    "mail": "Email",
+    "password": "Password"
+  },
+  "register": {
+    "title": "Create an account",
+    "register": "Sign up",
+    "ConfirmationPassword": "Confirm password"
+  }
 }
-

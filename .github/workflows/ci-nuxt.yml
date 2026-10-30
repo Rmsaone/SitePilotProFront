@@ -1,0 +1,92 @@
+# .github/workflows/ci-nuxt.yml
+name: CI - Nuxt Frontend
+
+on:
+  push:
+    branches: [main, develop]
+  pull_request:
+    branches: [main, develop]
+
+jobs:
+  commitlint:
+    name: Commit Message
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: '20'
+
+      - name: Install commitlint
+        run: |
+          npm install --save-dev \
+            @commitlint/cli \
+            @commitlint/config-conventional
+
+      - name: Lint commit messages
+        run: |
+          npx commitlint \
+            --from ${{ github.event.pull_request.base.sha || 'HEAD~1' }} \
+            --to HEAD \
+            --verbose
+
+  lint:
+    name: 🔍 ESLint
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 20
+          cache: 'npm'
+      - run: npm ci
+      - run: npm run lint
+
+  typecheck:
+    name: 🔎 Typecheck
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 20
+          cache: 'npm'
+      - name: 📂 Cache Nuxt
+        uses: actions/cache@v4
+        with:
+          path: |
+            .nuxt
+            node_modules/.cache
+          key: ${{ runner.os }}-nuxt-${{ hashFiles('package-lock.json') }}
+          restore-keys: |
+            ${{ runner.os }}-nuxt-
+      - run: npm ci
+      - run: npm run typecheck
+
+#  test:
+#    name: 🧪 Tests
+#    runs-on: ubuntu-latest
+#    steps:
+#      - uses: actions/checkout@v4
+#      - uses: actions/setup-node@v4
+#        with:
+#          node-version: 20
+#          cache: 'npm'
+#      - name: 📂 Cache Nuxt
+#        uses: actions/cache@v4
+#        with:
+#          path: |
+#            .nuxt
+#            node_modules/.cache
+#          key: ${{ runner.os }}-nuxt-${{ hashFiles('package-lock.json') }}
+#          restore-keys: |
+#            ${{ runner.os }}-nuxt-
+#      - run: npm ci
+#      - run: npm run test
+

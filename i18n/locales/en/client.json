@@ -2,16 +2,63 @@
   "client": {
     "add": "Add a client",
     "list": {
-      "titleList": "Clients list",
-      "name": "Company name",
-      "email": "Email",
+      "title": "Clients",
+      "searchPlaceholder": "Search a client...",
+      "typeFilter": "Client type",
+      "allTypes": "All clients",
+      "city": "City",
+      "noData": "No client found",
+      "total": "No client | {count} client in total | {count} clients in total",
+      "deleted": "Client deleted"
+    },
+    "form": {
+      "createTitle": "New client",
+      "editTitle": "Edit client",
+      "subtitle": "Fill in the client details",
+      "identity": "Identity",
+      "contactName": "Contact name",
+      "privateName": "Project / file name",
       "contact": "Contact",
-      "address": "Company address",
-      "postalCode": "Postal code",
+      "email": "Email",
       "phone": "Phone",
-      "search": "Search client",
-      "searchPlaceholder": "By name, email, contact ...",
-      "noData": "No client found"
+      "company": "Company",
+      "companyName": "Company name",
+      "siret": "SIRET number",
+      "siretInvalid": "The SIRET must contain 14 digits",
+      "tvaIntra": "Intra-community VAT number",
+      "address": "Address",
+      "street": "Street",
+      "zipCode": "Postal code",
+      "city": "City",
+      "country": "Country",
+      "responsibleSection": "Manager",
+      "responsible": "Account manager",
+      "submit": "Create client",
+      "updated": "Client updated"
+    },
+    "popup": {
+      "title": "Client created!",
+      "subtitle": "Would you like to create a quote for this client?",
+      "createQuoteHint": "Build an offer for this client",
+      "open": "Open the client",
+      "openHint": "Open the client page",
+      "dismiss": "Continue without creating"
+    },
+    "detail": {
+      "title": "Client",
+      "back": "Back to clients",
+      "notFound": "This client cannot be found.",
+      "createWorksite": "Create a worksite",
+      "worksites": "Worksites",
+      "quotes": "Quotes",
+      "invoices": "Invoices",
+      "contactInfo": "Contact details",
+      "linkedWorksites": "Linked worksites",
+      "worksiteCount": "No worksite | {count} worksite | {count} worksites",
+      "noWorksite": "No linked worksite",
+      "quoteCount": "{count} quote(s)",
+      "noQuote": "No quote for this client",
+      "see": "Open"
     }
   }
 }

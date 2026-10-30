@@ -2,7 +2,10 @@ export default defineNuxtConfig({
   modules: [
     '@nuxt/eslint',
     '@nuxt/ui',
-    '@nuxtjs/i18n'
+    '@nuxtjs/i18n',
+    'nuxt-auth-sanctum',
+    'dayjs-nuxt',
+    '@vee-validate/nuxt'
   ],
 
   ssr: false,
@@ -12,6 +15,14 @@ export default defineNuxtConfig({
   },
 
   css: ['~/assets/css/main.css'],
+
+  runtimeConfig: {
+    public: {
+      demoEmail: '',
+      demoPassword: ''
+    }
+  },
+
   routeRules: {
     '/': { prerender: true }
   },
@@ -27,9 +38,9 @@ export default defineNuxtConfig({
       }
     }
   },
+
   i18n: {
-    lazy: true,
-    Types: 'composition',
+    defaultLocale: 'fr',
     langDir: 'locales',
     strategy: 'no_prefix',
     locales: [
@@ -42,7 +53,13 @@ export default defineNuxtConfig({
           'fr/base.json',
           'fr/client.json',
           'fr/worksite.json',
-          'fr/home.json'
+          'fr/home.json',
+          'fr/auth.json',
+          'fr/account.json',
+          'fr/documentation.json',
+          'fr/quote.json',
+          'fr/invoice.json',
+          'fr/dashboard.json'
         ]
       },
       {
@@ -54,10 +71,40 @@ export default defineNuxtConfig({
           'en/base.json',
           'en/client.json',
           'en/worksite.json',
-          'en/home.json'
+          'en/home.json',
+          'en/auth.json',
+          'en/account.json',
+          'en/documentation.json',
+          'en/quote.json',
+          'en/invoice.json',
+          'en/dashboard.json'
         ]
       }
     ],
-    defaultLocale: 'fr'
+
+    detectBrowserLanguage: {
+      useCookie: true,
+      cookieKey: 'i18n_redirected',
+      redirectOn: 'root'
+    }
+  },
+  sanctum: {
+    baseUrl: 'http://localhost',
+    mode: 'cookie',
+    endpoints: {
+      login: '/api/v1/auth/login',
+      logout: '/api/v1/auth/logout',
+      user: '/api/v1/auth/me'
+    },
+    redirect: {
+      keepRequestedRoute: true,
+      onLogin: '/',
+      onLogout: '/login',
+      onAuthOnly: '/login',
+      onGuestOnly: '/'
+    },
+    globalMiddleware: {
+      enabled: true
+    }
   }
 });

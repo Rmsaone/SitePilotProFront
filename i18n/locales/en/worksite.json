@@ -2,17 +2,170 @@
   "worksite": {
     "add": "Add a worksite",
     "list": {
-      "titleList": "Worksites list",
-      "search": "Search worksite",
+      "title": "Worksites",
+      "search": "Search worksites",
       "statusSearch": "Worksite status",
-      "searchPlaceholder": "By name, client, location ...",
+      "searchPlaceholder": "Search a worksite...",
+      "allStatuses": "All statuses",
+      "display": "Columns",
+      "details": "Show details",
       "name": "Worksite name",
       "client": "Client",
       "place": "Location",
       "startDate": "Start date",
       "endDate": "End date",
       "status": "Status",
-      "noData": "No worksite found"
+      "noData": "No worksite found",
+      "seeDetail": "See details",
+      "total": "No worksite | {count} worksite in total | {count} worksites in total",
+      "deleted": "Worksite deleted"
+    },
+    "form": {
+      "createTitle": "New worksite",
+      "editTitle": "Edit worksite",
+      "createSubtitle": "Select an accepted quote to start",
+      "quote": "Linked accepted quote",
+      "quotePlaceholder": "Select an accepted quote…",
+      "quoteRequired": "Select an accepted quote",
+      "search": "Search...",
+      "noAcceptedQuote": "No accepted quote available. Accept a quote first.",
+      "linkedClient": "Linked client",
+      "identity": "Identity",
+      "name": "Worksite name",
+      "namePlaceholder": "e.g. Town hall renovation",
+      "description": "Description",
+      "descriptionPlaceholder": "Describe the work to be done…",
+      "startDate": "Start date",
+      "endDate": "Estimated end date",
+      "endBeforeStart": "The end date must be after the start date",
+      "priority": "Priority",
+      "status": "Status",
+      "address": "Address",
+      "street": "Address",
+      "streetPlaceholder": "e.g. 12 avenue des Fleurs",
+      "zipCode": "Postal code",
+      "zipInvalid": "Invalid postal code",
+      "city": "City",
+      "country": "Country",
+      "responsibleSection": "Manager",
+      "responsible": "Worksite manager",
+      "responsiblePlaceholder": "Select a manager…",
+      "submit": "Create worksite",
+      "created": "Worksite created",
+      "updated": "Worksite updated"
+    },
+    "detail": {
+      "title": "Worksite",
+      "back": "All worksites",
+      "close": "Close worksite",
+      "closed": "Worksite closed",
+      "notFound": "This worksite cannot be found.",
+      "tabs": {
+        "summary": "Summary",
+        "quotes": "Quotes",
+        "client-invoices": "Client invoices",
+        "suppliers": "Supplier invoices",
+        "subcontractors": "Subcontractor invoices",
+        "others": "Other invoices",
+        "workforce": "Labour"
+      }
+    },
+    "summary": {
+      "market": "Contract amount",
+      "marketSigned": "Signed contract",
+      "noMarket": "No accepted quote",
+      "remainingToSpend": "Left to spend",
+      "withinBudget": "Within budget",
+      "overBudget": "Over budget",
+      "remainingToInvoice": "Left to invoice",
+      "allInvoiced": "Fully invoiced",
+      "toInvoice": "To invoice",
+      "pendingInvoices": "Pending invoices",
+      "pendingInvoicesCount": "No pending invoice | {count} pending invoice | {count} pending invoices",
+      "pendingQuotes": "Pending quotes",
+      "pendingQuotesCount": "No pending quote | {count} pending quote | {count} pending quotes",
+      "access": "Open",
+      "costsTitle": "Cost summary",
+      "totalInvoiced": "Total client invoices",
+      "post": "Item",
+      "purchasePrice": "Purchase price",
+      "costPrice": "Cost price",
+      "total": "TOTAL",
+      "costs": {
+        "supplier": "Supplier invoices",
+        "subcontractor": "Subcontractor invoices",
+        "other": "Other invoices",
+        "workforce": "Labour costs"
+      },
+      "result": "Worksite result",
+      "grossMargin": "Gross margin",
+      "netMargin": "Net margin",
+      "chart": {
+        "title": "Invoiced vs. spent (cumulative)",
+        "subtitle": "Cumulative over the last 12 months",
+        "invoiced": "Invoiced",
+        "spent": "Spent"
+      }
+    },
+    "tabs": {
+      "allStatuses": "All statuses",
+      "statusFilter": "Filter by status",
+      "invoiceCount": "invoice(s) in total",
+      "invoiceEmpty": "No invoice found",
+      "addInvoice": "Add an invoice",
+      "saved": "Saved",
+      "quotes": {
+        "search": "Search a quote...",
+        "count": "quote(s) in total",
+        "empty": "No quote found"
+      },
+      "clientInvoices": {
+        "search": "Search an invoice..."
+      },
+      "suppliers": {
+        "search": "Search a supplier...",
+        "party": "Supplier",
+        "partyPlaceholder": "Supplier name",
+        "addTitle": "Add a supplier invoice",
+        "editTitle": "Edit supplier invoice"
+      },
+      "subcontractors": {
+        "search": "Search a subcontractor...",
+        "party": "Subcontractor",
+        "partyPlaceholder": "Company or name",
+        "addTitle": "Add a subcontractor invoice",
+        "editTitle": "Edit subcontractor invoice"
+      },
+      "others": {
+        "search": "Search an invoice...",
+        "party": "Label",
+        "partyPlaceholder": "e.g. Site cabin rental, travel costs…",
+        "addTitle": "Add an invoice — Other",
+        "editTitle": "Edit invoice — Other"
+      },
+      "form": {
+        "date": "Invoice date",
+        "number": "Invoice number",
+        "purchasePrice": "Purchase price (excl. VAT)",
+        "costPrice": "Cost price (excl. VAT)",
+        "attachment": "Scanned invoice (PDF, JPG, PNG)",
+        "attachmentLabel": "Drop the invoice here or click to select it"
+      },
+      "workforce": {
+        "search": "Search a worker...",
+        "count": "worker(s) in total",
+        "empty": "No worker found",
+        "add": "Add a worker",
+        "addTitle": "Add a worker / employee",
+        "editTitle": "Edit worker / employee",
+        "code": "Employee code",
+        "worker": "Full name",
+        "hours": "Hours worked",
+        "rate": "Hourly rate",
+        "additionalCosts": "Additional costs",
+        "grossCost": "Gross cost"
+      },
+      "downloadAttachment": "Download attachment"
     }
   }
 }

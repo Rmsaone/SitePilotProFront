@@ -1,0 +1,40 @@
+{
+  "dashboard": {
+    "actions": {
+      "addInvoice": "Add an invoice",
+      "createClient": "Create a client",
+      "createQuote": "Create a quote"
+    },
+    "periods": {
+      "month": "This month",
+      "quarter": "This quarter",
+      "year": "This year",
+      "all": "All time"
+    },
+    "trend": "Change compared with the previous period",
+    "kpis": {
+      "worksites": "Worksites in progress",
+      "acceptedQuotes": "Accepted quotes",
+      "invoices": "Invoices",
+      "quotes": "Quotes created"
+    },
+    "revenue": {
+      "title": "Revenue excl. VAT",
+      "subtitle": "Issued invoices · {period} · excl. VAT",
+      "compared": "Compared with the previous period"
+    },
+    "remaining": {
+      "title": "Left to invoice",
+      "worksites": "No worksite | {count} worksite | {count} worksites",
+      "subtitle": "On active worksites (accepted quotes not yet invoiced)",
+      "link": "See worksites"
+    },
+    "chart": {
+      "title": "Invoiced vs. Spent",
+      "subtitle": "Monthly comparison — {range}",
+      "invoiced": "Invoiced",
+      "spent": "Spent",
+      "link": "See details"
+    }
+  }
+}

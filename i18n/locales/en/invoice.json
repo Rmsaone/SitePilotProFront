@@ -1,0 +1,69 @@
+{
+  "invoice": {
+    "list": {
+      "title": "Invoices",
+      "searchPlaceholder": "Search an invoice...",
+      "statusFilter": "Payment status",
+      "allStatuses": "All statuses",
+      "noData": "No invoice found",
+      "total": "No invoice | {count} invoice in total | {count} invoices in total",
+      "deleted": "Invoice deleted"
+    },
+    "payment": {
+      "title": "Record a payment",
+      "status": "Payment status",
+      "date": "Payment date",
+      "method": "Payment method",
+      "methodRequired": "Select the payment method",
+      "saved": "Payment recorded"
+    },
+    "detail": {
+      "title": "Invoice",
+      "back": "Back to invoices",
+      "notFound": "This invoice cannot be found.",
+      "recordPayment": "Record a payment",
+      "sendByEmail": "Send by email",
+      "download": "Download PDF"
+    },
+    "document": {
+      "title": "INVOICE",
+      "billedTo": "Billed to",
+      "paymentDate": "Payment date",
+      "waiting": "Pending",
+      "paymentMethod": "Payment method",
+      "reference": "Reference",
+      "receivedOn": "Received on {date} — {method}",
+      "latePenalty": "Late payments incur penalties of 3× the legal interest rate."
+    },
+    "convert": {
+      "title": "Convert to invoice",
+      "date": "Invoice issue date",
+      "worksite": "Invoiced worksite",
+      "worksitePlaceholder": "Select a worksite of the client…",
+      "hint": "The invoice reuses the quote lines and amount. A quote can only be invoiced once.",
+      "created": "Invoice {number} created"
+    },
+    "import": {
+      "button": "Import an invoice",
+      "title": "Import an invoice",
+      "stepOf": "Step {step} / 3 — {label}",
+      "steps": {
+        "source": "Source",
+        "worksite": "Worksite",
+        "form": "Form"
+      },
+      "dropLabel": "Drop your invoice here",
+      "dropHint": "PDF, JPG or PNG — 10 MB max.",
+      "worksiteHint": "Link this invoice to an existing worksite.",
+      "kinds": {
+        "suppliers": "Supplier",
+        "subcontractors": "Subcontractor",
+        "others": "Other"
+      },
+      "back": "Back",
+      "next": "Next",
+      "submit": "Save invoice",
+      "saved": "Invoice imported"
+    }
+  }
+}
