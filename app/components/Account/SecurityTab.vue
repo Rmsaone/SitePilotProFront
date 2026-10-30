@@ -4,9 +4,7 @@ import { z } from 'zod';
 
 const { t, tm, rt } = useI18n();
 const toast = useToast();
-const nuxtApp = useNuxtApp();
 const client = useSanctumClient();
-const appConfig = useSanctumAppConfig();
 const { setUser } = useAuthUser();
 const { handle } = useApiErrors();
 const passwordSchema = usePasswordSchema();
@@ -51,7 +49,6 @@ async function logoutEverywhere(): Promise<void> {
 
   try {
     await client('/api/v1/auth/logout-everywhere', { method: 'post' });
-    await appConfig.tokenStorage?.set(nuxtApp, undefined);
     setUser(null);
     await navigateTo('/login');
   } catch (error) {

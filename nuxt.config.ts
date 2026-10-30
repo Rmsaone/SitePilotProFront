@@ -90,7 +90,7 @@ export default defineNuxtConfig({
   },
   sanctum: {
     baseUrl: 'http://localhost',
-    mode: 'token',
+    mode: 'cookie',
     endpoints: {
       login: '/api/v1/auth/login',
       logout: '/api/v1/auth/logout',

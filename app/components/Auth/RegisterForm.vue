@@ -1,16 +1,13 @@
 <script setup lang="ts">
 import { toTypedSchema } from '@vee-validate/zod';
 import { z } from 'zod';
-import type { AuthResponse } from '~/components/Account/Types/user.interface';
 
 const emit = defineEmits<{
   login: [];
 }>();
 
 const { t } = useI18n();
-const nuxtApp = useNuxtApp();
 const client = useSanctumClient();
-const appConfig = useSanctumAppConfig();
 const { refreshIdentity } = useSanctumAuth();
 const { handle } = useApiErrors();
 const passwordSchema = usePasswordSchema();
@@ -44,7 +41,7 @@ const [affiliationCode] = defineField('affiliation_code');
 
 const onSubmit = handleSubmit(async (values) => {
   try {
-    const response = await client<AuthResponse>('/api/v1/auth/register', {
+    await client('/api/v1/auth/register', {
       method: 'post',
       body: {
         ...values,
@@ -52,7 +49,6 @@ const onSubmit = handleSubmit(async (values) => {
       }
     });
 
-    await appConfig.tokenStorage?.set(nuxtApp, response.token);
     await refreshIdentity();
     await navigateTo('/');
   } catch (error) {
